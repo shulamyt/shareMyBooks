@@ -21,3 +21,5 @@ var createdServer = server.listen(3000, function () {
   console.log('shareMyBooks app listening at ' + address);
 
 });
+
+require('./server/rest/userRest')(server);
