@@ -1,15 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var app = express();
-app.use(express.static('app'));
-app.use(bodyParser.json());
+var server = express();
+server.use(express.static('app'));
+server.use(bodyParser.json());
 
 
-var server = app.listen(3000, function () {
+var createdServer = server.listen(3000, function () {
 
-  var host = server.address().address;
-  var port = server.address().port;
+  var host = createdServer.address().address;
+  var port = createdServer.address().port;
   var address;
   if(host === "::"){
 	address = "http://localhost:" + port;
@@ -20,4 +20,4 @@ var server = app.listen(3000, function () {
 
   console.log('shareMyBooks app listening at ' + address);
 
-})
+});
