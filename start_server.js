@@ -10,7 +10,14 @@ var server = app.listen(3000, function () {
 
   var host = server.address().address;
   var port = server.address().port;
+  var address;
+  if(host === "::"){
+	address = "http://localhost:" + port;
+  }
+  else{
+  	address = "http://" + host + ':' + port;
+  }
 
-  console.log('shareMyBooks app listening at http://' + host + ':' + port);
+  console.log('shareMyBooks app listening at ' + address);
 
 })
