@@ -1,10 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var mssql =require('mssql');
 
 var server = express();
 server.use(express.static('app'));
 server.use(bodyParser.json());
-
+// server.use(mssql.static('app'));
 
 var createdServer = server.listen(3000, function () {
 
@@ -23,3 +24,5 @@ var createdServer = server.listen(3000, function () {
 });
 
 require('./server/rest/userRest')(server);
+require('./server/rest/bookRest')(server);
+
