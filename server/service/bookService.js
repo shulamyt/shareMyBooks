@@ -5,12 +5,19 @@ function BookService(){
 };
 
 BookService.prototype.getBook = function(id){
-	var defaultBookId = '123';
-	if(id){
-		bookPersistence.getBook(id);
-	}else{
-		bookPersistence.getBook(defaultBookId);
-	}
+	var promise =  new Promise(function(resolve, reject) {
+		var defaultBookId = '123';
+		if(id){
+			bookPersistence.getBook(id).then(function(book){
+				resolve(book);
+			});
+		}else{
+			bookPersistence.getBook(defaultBookId).then(function(book){
+				resolve(book);
+			});
+		}
+	});
+	return promise;
 };
 
 var bookService = new BookService();
