@@ -1,9 +1,9 @@
 var sql=require('mssql');
 
-function BookPersistence(){
+function UserPersistence(){
 	
 };
-var GET_BOOK_BY_ID="select * from [dbo].[Book] b where b.bookId=";
+var ADD_USER="insert into [dbo].[User] ([id],[first_name],[last_name]) values "
 var dbConfig={
 	server:"localhost\\MSSQLSERVER",
 	port:1433,
@@ -12,8 +12,7 @@ var dbConfig={
 	password:"123456"
 };
 
-BookPersistence.prototype.getBook = function(id){
-	//id='456';
+UserPersistence.prototype.addUser = function(user){
 	var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);
 		var req = new sql.Request(conn);
@@ -23,15 +22,16 @@ BookPersistence.prototype.getBook = function(id){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(GET_BOOK_BY_ID+id,
+			req.query(ADD_USER+"("+"'"+user.id+"'"+","+ "'"+user.first_name+"'"+","+"'"+user.last_name+"'"+")",
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
 						resolve(null);
 					}
 					else{
+
 						console.log(recordset);
-						resolve(recordset[0]);
+						resolve(recordset);
 					}
 				});
 		});
@@ -39,5 +39,5 @@ BookPersistence.prototype.getBook = function(id){
 	return promise;
 };
 
-var bookPersistence = new BookPersistence();
-module.exports = bookPersistence;
+var userPersistence = new UserPersistence();
+module.exports = userPersistence;

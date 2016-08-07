@@ -6,4 +6,14 @@ module.exports = function (server) {
         var user = userService.getUser();
         res.status(201).json(user);
     });
+    server.get('/adduser', function (req, res) {
+    	var user={
+    		"id":1134,
+    		"first_name":"bracha",
+    		"last_name":"neuman"
+    	}
+        userService.addUser(user);
+        // res.status(201).json(user);
+        console.log("return from service");
+    });
 };
