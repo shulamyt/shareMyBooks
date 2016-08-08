@@ -13,7 +13,6 @@ var dbConfig={
 };
 
 BookPersistence.prototype.getBook = function(id){
-	//id='456';
 	var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);
 		var req = new sql.Request(conn);
@@ -38,6 +37,8 @@ BookPersistence.prototype.getBook = function(id){
 	});
 	return promise;
 };
+var connectDB=function(){
 
+};
 var bookPersistence = new BookPersistence();
 module.exports = bookPersistence;
