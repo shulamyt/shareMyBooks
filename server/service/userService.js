@@ -13,7 +13,8 @@ UserService.prototype.getUser = function(){
 };
 
 UserService.prototype.addUser = function(user){
-	userPersistence.addUser(user);
+	userPersistence.prototype.addUser(user);
+		console.log("return from UP");
 };
 
 var userService = new UserService();
