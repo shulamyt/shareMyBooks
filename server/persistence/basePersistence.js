@@ -1,7 +1,7 @@
 function BasePersistence(){
 };
 BasePersistence.prototype.dbConfig={
-	server:"localhost\\MSSQLSERVER",
+	server:"localhost\\SQLEXPRESS",
 	port:1433,
 	database:"smb_test",
 	user:"sa",

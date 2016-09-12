@@ -18,7 +18,6 @@ var FOR_LOGIN="and email=";
 // };
 
 UserPersistence.prototype.addUser = function(user){
-	var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(this.dbConfig);
 		var req = new sql.Request(conn);
 		conn.connect(function(err){
@@ -39,18 +38,16 @@ UserPersistence.prototype.addUser = function(user){
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
-						resolve(null);
 					}
 					else{
-
 						console.log(recordset);
-						resolve(recordset);
 					}
 				});
 		});
+};
 
 UserPersistence.prototype.deleteUser=function(password){
-	var conn = new sql.Connection(dbConfig);
+	var conn = new sql.Connection(this.dbConfig);
 		var req = new sql.Request(conn);
 		conn.connect(function(err){
 			if(err){
@@ -73,7 +70,7 @@ UserPersistence.prototype.deleteUser=function(password){
 
 UserPersistence.prototype.getUser = function(password){
 	var promise =  new Promise(function(resolve, reject) {
-		var conn = new sql.Connection(dbConfig);
+		var conn = new sql.Connection(this.dbConfig);
 		var req = new sql.Request(conn);
 		conn.connect(function(err){
 			if(err){
@@ -98,7 +95,7 @@ UserPersistence.prototype.getUser = function(password){
 };
 UserPersistence.prototype.login = function(password,email){
 	var promise =  new Promise(function(resolve, reject) {
-		var conn = new sql.Connection(dbConfig);
+		var conn = new sql.Connection(this.dbConfig);
 		var req = new sql.Request(conn);
 		conn.connect(function(err){
 			if(err){
@@ -124,3 +121,5 @@ UserPersistence.prototype.login = function(password,email){
 
 util.inherits(UserPersistence,basePersistence);
 module.exports = UserPersistence;
+// var userPersistence = new UserPersistence();
+// module.exports = userPersistence;
