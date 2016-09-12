@@ -3,9 +3,12 @@ var sql=require('mssql');
 function UserPersistence(){
 	
 };
-var ADD_USER="insert into [dbo].[User] ([id],[first_name],[last_name]) values "
+var ADD_USER="insert into [dbo].[User] ([password],[f_name],[l_name],[email],[phone],[address]) values ";
+var DEL_USER="delete from [dbo].[User] where password=";
+var GET_USER="select * from [dbo].[User] where password=";
+var FOR_LOGIN="and email=";
 var dbConfig={
-	server:"localhost\\MSSQLSERVER",
+	server:"localhost\\SQLEXPRESS",
 	port:1433,
 	database:"smb_test",
 	user:"sa",
@@ -22,7 +25,15 @@ UserPersistence.prototype.addUser = function(user){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(ADD_USER+"("+"'"+user.id+"'"+","+ "'"+user.first_name+"'"+","+"'"+user.last_name+"'"+")",
+			req.query(ADD_USER+
+				"("+
+				"'"+user.password+"'"+","+
+				"'"+user.f_name+"'"+","+
+				"'"+user.l_name+"'"+","+
+				"'"+user.email+"'"+","+
+				"'"+user.phone+"'"+","+
+				"'"+user.address+"'"+
+				")",
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
@@ -39,5 +50,77 @@ UserPersistence.prototype.addUser = function(user){
 	return promise;
 };
 
+UserPersistence.prototype.deleteUser=function(password){
+	var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to connect");
+			req.query(DEL_USER+password,
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+					}
+					else{
+
+						console.log(recordset);
+					}
+				});
+		});
+	};
+
+UserPersistence.prototype.getUser = function(password){
+	var promise =  new Promise(function(resolve, reject) {
+		var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to connect");
+			req.query(GET_USER+password,
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+						resolve(null);
+					}
+					else{
+						console.log(recordset);
+						resolve(recordset[0]);
+					}
+				});
+		});
+	});
+	return promise;
+};
+UserPersistence.prototype.login = function(password,email){
+	var promise =  new Promise(function(resolve, reject) {
+		var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to connect");
+			req.query(GET_USER+password+FOR_LOGIN+"'"+email+"'",
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+						resolve(null);
+					}
+					else{
+						console.log(recordset);
+						resolve(recordset[0]);
+					}
+				});
+		});
+	});
+	return promise;
+};
 var userPersistence = new UserPersistence();
 module.exports = userPersistence;
