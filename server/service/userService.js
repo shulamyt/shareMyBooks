@@ -30,9 +30,9 @@ UserService.prototype.login = function(password,email){
 };
 
 UserService.prototype.addUser = function(user){
-	//var user=new User(details.password,details.f_name,details.l_name,details.email,details.phone,details.address);
 
-	userPersistence.addUser(user);
+	userPersistence.prototype.addUser(user);
+		console.log("return from UP");
 };
 UserService.prototype.deleteUser=function(password){
 	userPersistence.deleteUser(password);
