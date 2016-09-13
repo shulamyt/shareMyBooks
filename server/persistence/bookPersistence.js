@@ -4,13 +4,13 @@ function BookPersistence(){
 	
 };
 var GET_BOOK_BY_ID="select * from [dbo].[Book] b where b.id=";
-var SRCH_BOOK="select id,name,outhor,isloan from [dbo].[Book] where (name like '%";
+var SRCH_BOOK="select id,name,author,isloan from [dbo].[Book] where (name like '%";
 var CNT_SRCH="%' or outhor like '%";
 var CNT2_SRCH="%') and user_id=";
-var ADD_BOOK="insert into [dbo].[Book] ([name],[outhor],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
+var ADD_BOOK="insert into [dbo].[Book] ([name],[author],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
 var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
-var GET_ALL_BOOKS="select id,name,outhor,isloan from [dbo].[Book] b where b.user_id= "
+var GET_ALL_BOOKS="select id,name,author,isloan from [dbo].[Book] b where b.user_id= "
 var dbConfig={
 	server:"localhost\\SQLEXPRESS",
 	port:1433,
@@ -32,7 +32,7 @@ BookPersistence.prototype.addBook=function(book){
 			req.query(ADD_BOOK+
 				"("+
 				"'"+book.name+"'"+","+
-				"'"+book.outhor+"'"+","+
+				"'"+book.author+"'"+","+
 				"'"+book.description+"'"+","+
 				    GET_DATE+","+
 				"'"+book.shelf+"'"+","+
