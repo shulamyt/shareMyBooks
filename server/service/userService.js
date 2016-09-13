@@ -5,9 +5,9 @@ function UserService(){
 	
 };
 
-UserService.prototype.getUser = function(password){
+UserService.prototype.getUser = function(id){
 	var promise =  new Promise(function(resolve, reject) {
-		userPersistence.prototype.getUser(password).then(function(user){
+		userPersistence.getUser(id).then(function(user){
 			resolve(user);
 		});
 	});
@@ -15,7 +15,7 @@ UserService.prototype.getUser = function(password){
 };
 UserService.prototype.login = function(password,email){
 	var promise =  new Promise(function(resolve, reject) {
-		userPersistence.prototype.login(password,email).then(function(user){
+		userPersistence.login(password,email).then(function(user){
 			if (user) {
         		console.log(true);
         		resolve(true);
@@ -31,12 +31,12 @@ UserService.prototype.login = function(password,email){
 
 UserService.prototype.addUser = function(user){
 
-	userPersistence.prototype.addUser(user);
+	userPersistence.addUser(user);
 //	userPersistence.addUser(user);
 		//console.log("return from UP");
 };
-UserService.prototype.deleteUser=function(password){
-	userPersistence.prototype.deleteUser(password);
+UserService.prototype.deleteUser=function(id){
+	userPersistence.deleteUser(id);
 };
 
 var userService = new UserService();
