@@ -26,6 +26,23 @@ LoanService.prototype.getLoan = function(id){
 	return promise;
 };
 
+LoanService.prototype.getallWaiting=function(userId){
+	var promise =  new Promise(function(resolve, reject) {
+			loanPersistence.getallWaiting(userId).then(function(loans){
+				resolve(loans);
+			});
+		});
+	return promise;
+};
+
+LoanService.prototype.getAllLating=function(userId){
+	var promise =  new Promise(function(resolve, reject) {
+			loanPersistence.getAllLating(userId).then(function(loans){
+				resolve(loans);
+			});
+		});
+	return promise;
+};
 
 var loanService = new LoanService();
 module.exports = loanService;
