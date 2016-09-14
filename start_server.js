@@ -23,3 +23,4 @@ var createdServer = server.listen(3000, function () {
 
 require('./server/rest/userRest')(server);
 require('./server/rest/bookRest')(server);
+require('./server/rest/loanRest')(server);

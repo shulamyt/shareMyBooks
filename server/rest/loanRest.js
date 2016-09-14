@@ -2,8 +2,26 @@ var loanService = require('./../service/loanService');
 
 module.exports = function (server) {
 
+    //ask to loan a book
     server.post('/loans', function (req, res) {
         loanService.askToLoan(req.body.loan);
     });
+
+    //return a book
+    server.put('/loans/return',function(req,res){
+        loanService.returnBook(req.body.id);
+    });
+
+    //confirm the request
+    server.put('/loans',function(req,res){
+        loanService.confirm(req.body.confirm);
+    });
+
+    server.get('/loans/:id',function(req,res){
+        loanService.getLoan(req.params.id).then(function(loan){
+            console.log(loan);
+            res.status(201).json(loan);
+        });
+    })
 
 };
