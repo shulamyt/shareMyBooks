@@ -22,7 +22,7 @@ module.exports = function (server) {
         });
     });
     server.put('/users/:id',function(req,res){
-    	userService.update()
+    	userService.update();
     })
 
 };
