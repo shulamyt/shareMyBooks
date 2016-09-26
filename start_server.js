@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var server = express();
-server.use(express.static('app'));
+server.use(express.static('dist'));
 server.use(bodyParser.json());
 
 var createdServer = server.listen(3000, function () {
@@ -11,7 +11,7 @@ var createdServer = server.listen(3000, function () {
   var port = createdServer.address().port;
   var address;
   if(host === "::"){
-	address = "http://localhost:" + port;
+    address = "http://localhost:" + port;
   }
   else{
   	address = "http://" + host + ':' + port;
