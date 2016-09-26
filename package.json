@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --bail",
+    "start": "node start_server.js",
+    "start_dev": "node webpack.dev.server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shulamyt/shareMyBooks.git"
