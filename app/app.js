@@ -26,19 +26,19 @@ class Grid extends React.Component {
 }
 export default Grid;
 
-const render = function(projects){
+const render = function(user){
 	return ReactDOM.render(
-		<Grid data={projects} />,
+		<Grid data={user} />,
 		document.getElementById('main')
 	);
 };
-var projects = {};
+var user = {};
 
-restService.get('/users/1').then(function(fetchProjects){
+restService.get('/users/1').then(function(fetchUser){
 	console.log("Im here")
-	projects = fetchProjects
-	console.log(fetchProjects);
-	render(projects);
+	user = fetchUser
+	console.log(fetchUser);
+	render(user);
 	console.log("firstRender");	
 });
 
