@@ -1,44 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as restService from './service/restService';
+import Login from './components/login.js';
+import Grid from './components/grid.js';
 
-class Grid extends React.Component {
-	render() {
-		return (
-			<div className="grid" >
-				<table >
-				  	<tbody>
-						  <tr>
-						    <th>First name</th>
-						    <th>Last name</th> 
-						    <th>id</th>
-						  </tr>
-						  <tr>
-						    <td>{this.props.data.f_name}</td>
-						    <td>{this.props.data.l_name}</td> 
-						    <td>{this.props.data.id}</td>
-						  </tr>
-				  	</tbody>
-				</table>
-			</div>
-		);
-	}
-}
-export default Grid;
+var user = {
+	"f_name":"ss",
+	"l_name":"kk",
+	"id":4
+};
 
-const render = function(user){
+export function render(user){
 	return ReactDOM.render(
-		<Grid data={user} />,
+		<div>
+		<Grid data={user} />
+		<Login />
+		</div>,
 		document.getElementById('main')
 	);
 };
-var user = {};
 
-restService.get('/users/1').then(function(fetchUser){
-	console.log("Im here")
-	user = fetchUser
-	console.log(fetchUser);
-	render(user);
-	console.log("firstRender");	
-});
 
+render(user);
+
+
+// ReactDOM.render(
+// 	<Popup />,
+// 	document.getElementById('main')
+// 	);
+// Popup.alert('Tjis is an alert popup');
