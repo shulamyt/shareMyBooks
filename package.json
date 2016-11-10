@@ -18,17 +18,18 @@
     "url": "https://github.com/shulamyt/shareMyBooks/issues"
   },
   "homepage": "https://github.com/shulamyt/shareMyBooks#readme",
-   "dependencies": {
+  "dependencies": {
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
     "lodash": "^4.15.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-skylight": "^0.4.1"
   },
   "devDependencies": {
     "mssql": "^3.3.0",
-    "util":"^0.10.3",
+    "util": "^0.10.3",
     "babel-core": "^6.2.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-object-assign": "^6.8.0",
