@@ -9,24 +9,43 @@ class Popup extends React.Component {
     super(props);
   }
   adduser(){
+    var err=false;
     var password=$("#pswrd").val();
     var f_name=$("#f_n").val();
     var l_name=$("#l_n").val();
     var email=$("#eml").val();
     var phone=$("#phn").val();
     var address=$("#add").val();
-    var user={
+    var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+    if(password=="" || f_name=="" || l_name==""  || address=="" || phone==""){
+        $("#spnErr").text("You must fill in required fields!!! :(");
+        err=true;
+    }
+    else{
+      $("#spnErr").text("");
+    }
+    if(phone!="" && !filter.test(phone)){
+        $("#spnphn").text("Valid format only!!!");
+        err=true;
+    }
+    else{
+      $("#spnphn").text("");
+    }
+    if (!err){
+      var user={
       "password":password,
       "f_name":f_name,
       "l_name":l_name,
       "email":email,
       "phone":phone,
       "address":address
+      }
+      console.log(user);
+      restService.post('/users', user).then(function(fetchProjects){
+      console.log("retrn from server");
+      });
+      this.refs.simpleDialog.hide();
     }
-    console.log(user);
-    restService.post('/users', user).then(function(fetchProjects){
-    console.log("retrn from server");
-  });
   }
   render() {
 
@@ -42,8 +61,9 @@ class Popup extends React.Component {
           *First name: <input type="text" id="f_n"/><br/><br/>
           *Last name:  <input type="text" id="l_n" /><br/><br/>
           *Email:      <input type="text" id="eml"/><br/><br/>
-           phone:    <input type="text" id="phn"/><br/>
-           Address:    <input type="text" id="add"/><br/>
+           phone:    <input type="text" id="phn"/><span id="spnphn"></span><br/><br/>
+           Address:    <input type="text" id="add"/><br/><br/>
+           <span id="spnErr"></span><br/><br/>
            <button onClick={()=>this.adduser()}>add</button>
         </SkyLight>
       </div>

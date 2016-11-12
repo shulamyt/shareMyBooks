@@ -16085,7 +16085,8 @@
 	  if (x === y) {
 	    // Steps 1-5, 7-10
 	    // Steps 6.b-6.e: +0 != -0
-	    return x !== 0 || 1 / x === 1 / y;
+	    // Added the nonzero y check to make Flow happy, but it is redundant
+	    return x !== 0 || y !== 0 || 1 / x === 1 / y;
 	  } else {
 	    // Step 6.a: NaN == NaN
 	    return x !== x && y !== y;
@@ -21601,7 +21602,7 @@
 		_createClass(Login, [{
 			key: 'login',
 			value: function login() {
-				restService.get('/users/1').then(function (fetchUser) {
+				restService.get('/users/7').then(function (fetchUser) {
 					console.log("Im here");
 					user = fetchUser;
 					console.log(fetchUser);
@@ -22122,24 +22123,41 @@
 	  _createClass(Popup, [{
 	    key: 'adduser',
 	    value: function adduser() {
+	      var err = false;
 	      var password = $("#pswrd").val();
 	      var f_name = $("#f_n").val();
 	      var l_name = $("#l_n").val();
 	      var email = $("#eml").val();
 	      var phone = $("#phn").val();
 	      var address = $("#add").val();
-	      var user = {
-	        "password": password,
-	        "f_name": f_name,
-	        "l_name": l_name,
-	        "email": email,
-	        "phone": phone,
-	        "address": address
-	      };
-	      console.log(user);
-	      restService.post('/users', user).then(function (fetchProjects) {
-	        console.log("retrn from server");
-	      });
+	      var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+	      if (password == "" || f_name == "" || l_name == "" || address == "" || phone == "") {
+	        $("#spnErr").text("You must fill in required fields!!! :(");
+	        err = true;
+	      } else {
+	        $("#spnErr").text("");
+	      }
+	      if (phone != "" && !filter.test(phone)) {
+	        $("#spnphn").text("Valid format only!!!");
+	        err = true;
+	      } else {
+	        $("#spnphn").text("");
+	      }
+	      if (!err) {
+	        var user = {
+	          "password": password,
+	          "f_name": f_name,
+	          "l_name": l_name,
+	          "email": email,
+	          "phone": phone,
+	          "address": address
+	        };
+	        console.log(user);
+	        restService.post('/users', user).then(function (fetchProjects) {
+	          console.log("retrn from server");
+	        });
+	        this.refs.simpleDialog.hide();
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -22191,9 +22209,15 @@
 	          _react2.default.createElement('br', null),
 	          'phone:    ',
 	          _react2.default.createElement('input', { type: 'text', id: 'phn' }),
+	          _react2.default.createElement('span', { id: 'spnphn' }),
+	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('br', null),
 	          'Address:    ',
 	          _react2.default.createElement('input', { type: 'text', id: 'add' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('span', { id: 'spnErr' }),
+	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
 	            'button',
