@@ -6,11 +6,8 @@ import Grid from './components/grid.js';
 import SkyLight from 'react-skylight';
 import Example from './components/popup.js';
 
-var user = {
-	"f_name":"ss",
-	"l_name":"kk",
-	"id":4
-};
+ var user = {};
+
 
 export function render(user){
 	return ReactDOM.render(
