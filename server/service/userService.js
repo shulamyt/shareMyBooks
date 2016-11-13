@@ -18,7 +18,7 @@ UserService.prototype.login = function(password,email){
 		userPersistence.login(password,email).then(function(user){
 			if (user) {
         		console.log(true);
-        		resolve(true);
+        		resolve(user);
         	}else{
         		console.log(false);
         		resolve(false);

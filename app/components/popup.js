@@ -17,7 +17,7 @@ class Popup extends React.Component {
     var phone=$("#phn").val();
     var address=$("#add").val();
     var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-    if(password=="" || f_name=="" || l_name==""  || address=="" || phone==""){
+    if(password.trim()=="" || f_name.trim()=="" || l_name.trim()==""  || address.trim()=="" || phone.trim()=="" || email.trim()==""){
         $("#spnErr").text("You must fill in required fields!!! :(");
         err=true;
     }

@@ -51,7 +51,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
 	'use strict';
 	
@@ -76,15 +76,15 @@
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _grid = __webpack_require__(175);
+	var _grid = __webpack_require__(176);
 	
 	var _grid2 = _interopRequireDefault(_grid);
 	
-	var _reactSkylight = __webpack_require__(176);
+	var _reactSkylight = __webpack_require__(177);
 	
 	var _reactSkylight2 = _interopRequireDefault(_reactSkylight);
 	
-	var _popup = __webpack_require__(180);
+	var _popup = __webpack_require__(181);
 	
 	var _popup2 = _interopRequireDefault(_popup);
 	
@@ -92,11 +92,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var user = {
-		"f_name": "ss",
-		"l_name": "kk",
-		"id": 4
-	};
+	var user = {};
 	
 	function render(user) {
 		return _reactDom2.default.render(_react2.default.createElement(
@@ -116,7 +112,7 @@
 	// 	);
 	// Popup.alert('Tjis is an alert popup');
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "app.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 2 */
@@ -21489,7 +21485,7 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
 	'use strict';
 	
@@ -21550,13 +21546,13 @@
 	
 	var request = new XMLHttpRequest();
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "restService.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "restService.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
 	'use strict';
 	
@@ -21588,6 +21584,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var $ = __webpack_require__(175);
+	
 	var user = {};
 	
 	var Login = function (_React$Component) {
@@ -21602,13 +21600,28 @@
 		_createClass(Login, [{
 			key: 'login',
 			value: function login() {
-				restService.get('/users/7').then(function (fetchUser) {
-					console.log("Im here");
-					user = fetchUser;
-					console.log(fetchUser);
-					app.render(user);
-					console.log("firstRender");
-				});
+				$("#noUser").text("");
+				var err = false;
+				var email = $("#email").val();
+				var password = $("#password").val();
+				if (password.trim() == "" || email.trim() == "") {
+					$("#spnErr").text("You must fill in required fields!!! :(");
+					err = true;
+				} else {
+					$("#spnErr").text("");
+				}
+				if (!err) {
+					restService.post('/users/login').then(function (fetchUser) {
+						console.log("Im here");
+						//result = fetchUser;
+						console.log(fetchUser);
+						if (!fetchUser) {
+							$("#noUser").text("one detail or more is incorrect");
+						}
+	
+						console.log("firstRender");
+					});
+				}
 			}
 		}, {
 			key: 'render',
@@ -21616,11 +21629,32 @@
 				var _this2 = this;
 	
 				return _react2.default.createElement(
-					'button',
-					{ className: 'login', onClick: function onClick() {
-							return _this2.login();
-						} },
-					'login'
+					'div',
+					null,
+					'enter your details to log in:',
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					'Email: ',
+					_react2.default.createElement('input', { type: 'text', id: 'email' }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					'Password ',
+					_react2.default.createElement('input', { type: 'password', id: 'password' }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(
+						'button',
+						{ className: 'login', onClick: function onClick() {
+								return _this2.login();
+							} },
+						'login'
+					),
+					_react2.default.createElement('span', { id: 'spnErr' }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('span', { id: 'noUser' }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null)
 				);
 			}
 		}]);
@@ -21630,618 +21664,10 @@
 	
 	exports.default = Login;
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "login.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Grid = function (_React$Component) {
-		_inherits(Grid, _React$Component);
-	
-		function Grid() {
-			_classCallCheck(this, Grid);
-	
-			return _possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).apply(this, arguments));
-		}
-	
-		_createClass(Grid, [{
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "grid" },
-					_react2.default.createElement(
-						"table",
-						null,
-						_react2.default.createElement(
-							"tbody",
-							null,
-							_react2.default.createElement(
-								"tr",
-								null,
-								_react2.default.createElement(
-									"th",
-									null,
-									"First name"
-								),
-								_react2.default.createElement(
-									"th",
-									null,
-									"Last name"
-								),
-								_react2.default.createElement(
-									"th",
-									null,
-									"id"
-								)
-							),
-							_react2.default.createElement(
-								"tr",
-								null,
-								_react2.default.createElement(
-									"td",
-									null,
-									this.props.data.f_name
-								),
-								_react2.default.createElement(
-									"td",
-									null,
-									this.props.data.l_name
-								),
-								_react2.default.createElement(
-									"td",
-									null,
-									this.props.data.id
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
-	
-		return Grid;
-	}(_react2.default.Component);
-	
-	exports.default = Grid;
-	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 176 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _skylight = __webpack_require__(177);
-	
-	Object.defineProperty(exports, 'default', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_skylight).default;
-	  }
-	});
-	
-	var _skylightstateless = __webpack_require__(178);
-	
-	Object.defineProperty(exports, 'SkyLightStateless', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_skylightstateless).default;
-	  }
-	});
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _skylightstateless = __webpack_require__(178);
-	
-	var _skylightstateless2 = _interopRequireDefault(_skylightstateless);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var isOpening = function isOpening(s1, s2) {
-	  return !s1.isVisible && s2.isVisible;
-	};
-	var isClosing = function isClosing(s1, s2) {
-	  return s1.isVisible && !s2.isVisible;
-	};
-	
-	var SkyLight = (function (_React$Component) {
-	  _inherits(SkyLight, _React$Component);
-	
-	  function SkyLight(props) {
-	    _classCallCheck(this, SkyLight);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SkyLight).call(this, props));
-	
-	    _this.state = { isVisible: false };
-	    return _this;
-	  }
-	
-	  _createClass(SkyLight, [{
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate(nextProps, nextState) {
-	      if (isOpening(this.state, nextState) && this.props.beforeOpen) {
-	        this.props.beforeOpen();
-	      }
-	
-	      if (isClosing(this.state, nextState) && this.props.beforeClose) {
-	        this.props.beforeClose();
-	      }
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps, prevState) {
-	      if (isOpening(prevState, this.state) && this.props.afterOpen) {
-	        this.props.afterOpen();
-	      }
-	
-	      if (isClosing(prevState, this.state) && this.props.afterClose) {
-	        this.props.afterClose();
-	      }
-	    }
-	  }, {
-	    key: 'show',
-	    value: function show() {
-	      this.setState({ isVisible: true });
-	    }
-	  }, {
-	    key: 'hide',
-	    value: function hide() {
-	      this.setState({ isVisible: false });
-	    }
-	  }, {
-	    key: '_onOverlayClicked',
-	    value: function _onOverlayClicked() {
-	      if (this.props.hideOnOverlayClicked) {
-	        this.hide();
-	      }
-	
-	      if (this.props.onOverlayClicked) {
-	        this.props.onOverlayClicked();
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(_skylightstateless2.default, _extends({}, this.props, {
-	        isVisible: this.state.isVisible,
-	        onOverlayClicked: function onOverlayClicked() {
-	          return _this2._onOverlayClicked();
-	        },
-	        onCloseClicked: function onCloseClicked() {
-	          return _this2.hide();
-	        }
-	      }));
-	    }
-	  }]);
-	
-	  return SkyLight;
-	})(_react2.default.Component);
-	
-	exports.default = SkyLight;
-	
-	SkyLight.displayName = 'SkyLight';
-	
-	SkyLight.propTypes = _extends({}, _skylightstateless2.default.sharedPropTypes, {
-	  afterClose: _react2.default.PropTypes.func,
-	  afterOpen: _react2.default.PropTypes.func,
-	  beforeClose: _react2.default.PropTypes.func,
-	  beforeOpen: _react2.default.PropTypes.func,
-	  hideOnOverlayClicked: _react2.default.PropTypes.bool
-	});
-	
-	SkyLight.defaultProps = _extends({}, _skylightstateless2.default.defaultProps, {
-	  hideOnOverlayClicked: false
-	});
-
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _styles = __webpack_require__(179);
-	
-	var _styles2 = _interopRequireDefault(_styles);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var SkyLightStateless = (function (_React$Component) {
-	  _inherits(SkyLightStateless, _React$Component);
-	
-	  function SkyLightStateless() {
-	    _classCallCheck(this, SkyLightStateless);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SkyLightStateless).apply(this, arguments));
-	  }
-	
-	  _createClass(SkyLightStateless, [{
-	    key: 'onOverlayClicked',
-	    value: function onOverlayClicked() {
-	      if (this.props.onOverlayClicked) {
-	        this.props.onOverlayClicked();
-	      }
-	    }
-	  }, {
-	    key: 'onCloseClicked',
-	    value: function onCloseClicked() {
-	      if (this.props.onCloseClicked) {
-	        this.props.onCloseClicked();
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var mergeStyles = function mergeStyles(key) {
-	        return Object.assign({}, _styles2.default[key], _this2.props[key]);
-	      };
-	      var isVisible = this.props.isVisible;
-	
-	      var dialogStyles = mergeStyles('dialogStyles');
-	      var overlayStyles = mergeStyles('overlayStyles');
-	      var closeButtonStyle = mergeStyles('closeButtonStyle');
-	      var titleStyle = mergeStyles('titleStyle');
-	      overlayStyles.display = dialogStyles.display = 'block';
-	
-	      var overlay = undefined;
-	      if (this.props.showOverlay) {
-	        overlay = _react2.default.createElement('div', { className: 'skylight-overlay',
-	          onClick: function onClick() {
-	            return _this2.onOverlayClicked();
-	          },
-	          style: overlayStyles
-	        });
-	      }
-	
-	      return isVisible ? _react2.default.createElement(
-	        'section',
-	        { className: 'skylight-wrapper' },
-	        overlay,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'skylight-dialog', style: dialogStyles },
-	          _react2.default.createElement(
-	            'a',
-	            { role: 'button', className: 'skylight-close-button',
-	              onClick: function onClick() {
-	                return _this2.onCloseClicked();
-	              },
-	              style: closeButtonStyle
-	            },
-	            '×'
-	          ),
-	          _react2.default.createElement(
-	            'h2',
-	            { style: titleStyle },
-	            this.props.title
-	          ),
-	          this.props.children
-	        )
-	      ) : _react2.default.createElement('div', null);
-	    }
-	  }]);
-	
-	  return SkyLightStateless;
-	})(_react2.default.Component);
-	
-	exports.default = SkyLightStateless;
-	
-	SkyLightStateless.displayName = 'SkyLightStateless';
-	
-	SkyLightStateless.sharedPropTypes = {
-	  closeButtonStyle: _react2.default.PropTypes.object,
-	  dialogStyles: _react2.default.PropTypes.object,
-	  onCloseClicked: _react2.default.PropTypes.func,
-	  onOverlayClicked: _react2.default.PropTypes.func,
-	  overlayStyles: _react2.default.PropTypes.object,
-	  showOverlay: _react2.default.PropTypes.bool,
-	  title: _react2.default.PropTypes.string,
-	  titleStyle: _react2.default.PropTypes.object
-	};
-	
-	SkyLightStateless.propTypes = _extends({}, SkyLightStateless.sharedPropTypes, {
-	  isVisible: _react2.default.PropTypes.bool
-	});
-	
-	SkyLightStateless.defaultProps = {
-	  title: '',
-	  showOverlay: true,
-	  overlayStyles: _styles2.default.overlayStyles,
-	  dialogStyles: _styles2.default.dialogStyles,
-	  closeButtonStyle: _styles2.default.closeButtonStyle
-	};
-
-/***/ },
-/* 179 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var styles = {
-	  overlayStyles: {
-	    position: 'fixed',
-	    top: '0px',
-	    left: '0px',
-	    width: '100%',
-	    height: '100%',
-	    zIndex: '99',
-	    backgroundColor: 'rgba(0,0,0,0.3)'
-	  },
-	  dialogStyles: {
-	    width: '50%',
-	    height: '400px',
-	    position: 'fixed',
-	    top: '50%',
-	    left: '50%',
-	    marginTop: '-200px',
-	    marginLeft: '-25%',
-	    backgroundColor: '#fff',
-	    borderRadius: '2px',
-	    zIndex: '100',
-	    padding: '15px',
-	    boxShadow: '0px 0px 4px rgba(0,0,0,.14),0px 4px 8px rgba(0,0,0,.28)'
-	  },
-	  title: {
-	    marginTop: '0px'
-	  },
-	  closeButtonStyle: {
-	    cursor: 'pointer',
-	    position: 'absolute',
-	    fontSize: '1.8em',
-	    right: '10px',
-	    top: '0px'
-	  }
-	};
-	
-	exports.default = styles;
-
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-	
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactSkylight = __webpack_require__(176);
-	
-	var _reactSkylight2 = _interopRequireDefault(_reactSkylight);
-	
-	var _restService = __webpack_require__(173);
-	
-	var restService = _interopRequireWildcard(_restService);
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var $ = __webpack_require__(181);
-	
-	var Popup = function (_React$Component) {
-	  _inherits(Popup, _React$Component);
-	
-	  function Popup(props) {
-	    _classCallCheck(this, Popup);
-	
-	    return _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
-	  }
-	
-	  _createClass(Popup, [{
-	    key: 'adduser',
-	    value: function adduser() {
-	      var err = false;
-	      var password = $("#pswrd").val();
-	      var f_name = $("#f_n").val();
-	      var l_name = $("#l_n").val();
-	      var email = $("#eml").val();
-	      var phone = $("#phn").val();
-	      var address = $("#add").val();
-	      var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-	      if (password == "" || f_name == "" || l_name == "" || address == "" || phone == "") {
-	        $("#spnErr").text("You must fill in required fields!!! :(");
-	        err = true;
-	      } else {
-	        $("#spnErr").text("");
-	      }
-	      if (phone != "" && !filter.test(phone)) {
-	        $("#spnphn").text("Valid format only!!!");
-	        err = true;
-	      } else {
-	        $("#spnphn").text("");
-	      }
-	      if (!err) {
-	        var user = {
-	          "password": password,
-	          "f_name": f_name,
-	          "l_name": l_name,
-	          "email": email,
-	          "phone": phone,
-	          "address": address
-	        };
-	        console.log(user);
-	        restService.post('/users', user).then(function (fetchProjects) {
-	          console.log("retrn from server");
-	        });
-	        this.refs.simpleDialog.hide();
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'section',
-	          null,
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: function onClick() {
-	                return _this2.refs.simpleDialog.show();
-	              } },
-	            'new user'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactSkylight2.default,
-	          { hideOnOverlayClicked: true, ref: 'simpleDialog', title: 'Welcome to ShareMyBooks' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'Hello, thank you for joining us!'
-	          ),
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'please enter your details:'
-	          ),
-	          '*password: ',
-	          _react2.default.createElement('input', { type: 'text', id: 'pswrd' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          '*First name: ',
-	          _react2.default.createElement('input', { type: 'text', id: 'f_n' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          '*Last name:  ',
-	          _react2.default.createElement('input', { type: 'text', id: 'l_n' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          '*Email:      ',
-	          _react2.default.createElement('input', { type: 'text', id: 'eml' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          'phone:    ',
-	          _react2.default.createElement('input', { type: 'text', id: 'phn' }),
-	          _react2.default.createElement('span', { id: 'spnphn' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          'Address:    ',
-	          _react2.default.createElement('input', { type: 'text', id: 'add' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('span', { id: 'spnErr' }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: function onClick() {
-	                return _this2.adduser();
-	              } },
-	            'add'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Popup;
-	}(_react2.default.Component);
-	
-	Popup.displayName = 'Popup';
-	
-	exports.default = Popup;
-	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "popup.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ },
-/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -32465,6 +31891,614 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Grid = function (_React$Component) {
+		_inherits(Grid, _React$Component);
+	
+		function Grid() {
+			_classCallCheck(this, Grid);
+	
+			return _possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).apply(this, arguments));
+		}
+	
+		_createClass(Grid, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "grid" },
+					_react2.default.createElement(
+						"table",
+						null,
+						_react2.default.createElement(
+							"tbody",
+							null,
+							_react2.default.createElement(
+								"tr",
+								null,
+								_react2.default.createElement(
+									"th",
+									null,
+									"First name"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"Last name"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"id"
+								)
+							),
+							_react2.default.createElement(
+								"tr",
+								null,
+								_react2.default.createElement(
+									"td",
+									null,
+									this.props.data.f_name
+								),
+								_react2.default.createElement(
+									"td",
+									null,
+									this.props.data.l_name
+								),
+								_react2.default.createElement(
+									"td",
+									null,
+									this.props.data.id
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Grid;
+	}(_react2.default.Component);
+	
+	exports.default = Grid;
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "grid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _skylight = __webpack_require__(178);
+	
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_skylight).default;
+	  }
+	});
+	
+	var _skylightstateless = __webpack_require__(179);
+	
+	Object.defineProperty(exports, 'SkyLightStateless', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_skylightstateless).default;
+	  }
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _skylightstateless = __webpack_require__(179);
+	
+	var _skylightstateless2 = _interopRequireDefault(_skylightstateless);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var isOpening = function isOpening(s1, s2) {
+	  return !s1.isVisible && s2.isVisible;
+	};
+	var isClosing = function isClosing(s1, s2) {
+	  return s1.isVisible && !s2.isVisible;
+	};
+	
+	var SkyLight = (function (_React$Component) {
+	  _inherits(SkyLight, _React$Component);
+	
+	  function SkyLight(props) {
+	    _classCallCheck(this, SkyLight);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SkyLight).call(this, props));
+	
+	    _this.state = { isVisible: false };
+	    return _this;
+	  }
+	
+	  _createClass(SkyLight, [{
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate(nextProps, nextState) {
+	      if (isOpening(this.state, nextState) && this.props.beforeOpen) {
+	        this.props.beforeOpen();
+	      }
+	
+	      if (isClosing(this.state, nextState) && this.props.beforeClose) {
+	        this.props.beforeClose();
+	      }
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate(prevProps, prevState) {
+	      if (isOpening(prevState, this.state) && this.props.afterOpen) {
+	        this.props.afterOpen();
+	      }
+	
+	      if (isClosing(prevState, this.state) && this.props.afterClose) {
+	        this.props.afterClose();
+	      }
+	    }
+	  }, {
+	    key: 'show',
+	    value: function show() {
+	      this.setState({ isVisible: true });
+	    }
+	  }, {
+	    key: 'hide',
+	    value: function hide() {
+	      this.setState({ isVisible: false });
+	    }
+	  }, {
+	    key: '_onOverlayClicked',
+	    value: function _onOverlayClicked() {
+	      if (this.props.hideOnOverlayClicked) {
+	        this.hide();
+	      }
+	
+	      if (this.props.onOverlayClicked) {
+	        this.props.onOverlayClicked();
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(_skylightstateless2.default, _extends({}, this.props, {
+	        isVisible: this.state.isVisible,
+	        onOverlayClicked: function onOverlayClicked() {
+	          return _this2._onOverlayClicked();
+	        },
+	        onCloseClicked: function onCloseClicked() {
+	          return _this2.hide();
+	        }
+	      }));
+	    }
+	  }]);
+	
+	  return SkyLight;
+	})(_react2.default.Component);
+	
+	exports.default = SkyLight;
+	
+	SkyLight.displayName = 'SkyLight';
+	
+	SkyLight.propTypes = _extends({}, _skylightstateless2.default.sharedPropTypes, {
+	  afterClose: _react2.default.PropTypes.func,
+	  afterOpen: _react2.default.PropTypes.func,
+	  beforeClose: _react2.default.PropTypes.func,
+	  beforeOpen: _react2.default.PropTypes.func,
+	  hideOnOverlayClicked: _react2.default.PropTypes.bool
+	});
+	
+	SkyLight.defaultProps = _extends({}, _skylightstateless2.default.defaultProps, {
+	  hideOnOverlayClicked: false
+	});
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _styles = __webpack_require__(180);
+	
+	var _styles2 = _interopRequireDefault(_styles);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var SkyLightStateless = (function (_React$Component) {
+	  _inherits(SkyLightStateless, _React$Component);
+	
+	  function SkyLightStateless() {
+	    _classCallCheck(this, SkyLightStateless);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SkyLightStateless).apply(this, arguments));
+	  }
+	
+	  _createClass(SkyLightStateless, [{
+	    key: 'onOverlayClicked',
+	    value: function onOverlayClicked() {
+	      if (this.props.onOverlayClicked) {
+	        this.props.onOverlayClicked();
+	      }
+	    }
+	  }, {
+	    key: 'onCloseClicked',
+	    value: function onCloseClicked() {
+	      if (this.props.onCloseClicked) {
+	        this.props.onCloseClicked();
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var mergeStyles = function mergeStyles(key) {
+	        return Object.assign({}, _styles2.default[key], _this2.props[key]);
+	      };
+	      var isVisible = this.props.isVisible;
+	
+	      var dialogStyles = mergeStyles('dialogStyles');
+	      var overlayStyles = mergeStyles('overlayStyles');
+	      var closeButtonStyle = mergeStyles('closeButtonStyle');
+	      var titleStyle = mergeStyles('titleStyle');
+	      overlayStyles.display = dialogStyles.display = 'block';
+	
+	      var overlay = undefined;
+	      if (this.props.showOverlay) {
+	        overlay = _react2.default.createElement('div', { className: 'skylight-overlay',
+	          onClick: function onClick() {
+	            return _this2.onOverlayClicked();
+	          },
+	          style: overlayStyles
+	        });
+	      }
+	
+	      return isVisible ? _react2.default.createElement(
+	        'section',
+	        { className: 'skylight-wrapper' },
+	        overlay,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'skylight-dialog', style: dialogStyles },
+	          _react2.default.createElement(
+	            'a',
+	            { role: 'button', className: 'skylight-close-button',
+	              onClick: function onClick() {
+	                return _this2.onCloseClicked();
+	              },
+	              style: closeButtonStyle
+	            },
+	            '×'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            { style: titleStyle },
+	            this.props.title
+	          ),
+	          this.props.children
+	        )
+	      ) : _react2.default.createElement('div', null);
+	    }
+	  }]);
+	
+	  return SkyLightStateless;
+	})(_react2.default.Component);
+	
+	exports.default = SkyLightStateless;
+	
+	SkyLightStateless.displayName = 'SkyLightStateless';
+	
+	SkyLightStateless.sharedPropTypes = {
+	  closeButtonStyle: _react2.default.PropTypes.object,
+	  dialogStyles: _react2.default.PropTypes.object,
+	  onCloseClicked: _react2.default.PropTypes.func,
+	  onOverlayClicked: _react2.default.PropTypes.func,
+	  overlayStyles: _react2.default.PropTypes.object,
+	  showOverlay: _react2.default.PropTypes.bool,
+	  title: _react2.default.PropTypes.string,
+	  titleStyle: _react2.default.PropTypes.object
+	};
+	
+	SkyLightStateless.propTypes = _extends({}, SkyLightStateless.sharedPropTypes, {
+	  isVisible: _react2.default.PropTypes.bool
+	});
+	
+	SkyLightStateless.defaultProps = {
+	  title: '',
+	  showOverlay: true,
+	  overlayStyles: _styles2.default.overlayStyles,
+	  dialogStyles: _styles2.default.dialogStyles,
+	  closeButtonStyle: _styles2.default.closeButtonStyle
+	};
+
+/***/ },
+/* 180 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var styles = {
+	  overlayStyles: {
+	    position: 'fixed',
+	    top: '0px',
+	    left: '0px',
+	    width: '100%',
+	    height: '100%',
+	    zIndex: '99',
+	    backgroundColor: 'rgba(0,0,0,0.3)'
+	  },
+	  dialogStyles: {
+	    width: '50%',
+	    height: '400px',
+	    position: 'fixed',
+	    top: '50%',
+	    left: '50%',
+	    marginTop: '-200px',
+	    marginLeft: '-25%',
+	    backgroundColor: '#fff',
+	    borderRadius: '2px',
+	    zIndex: '100',
+	    padding: '15px',
+	    boxShadow: '0px 0px 4px rgba(0,0,0,.14),0px 4px 8px rgba(0,0,0,.28)'
+	  },
+	  title: {
+	    marginTop: '0px'
+	  },
+	  closeButtonStyle: {
+	    cursor: 'pointer',
+	    position: 'absolute',
+	    fontSize: '1.8em',
+	    right: '10px',
+	    top: '0px'
+	  }
+	};
+	
+	exports.default = styles;
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactSkylight = __webpack_require__(177);
+	
+	var _reactSkylight2 = _interopRequireDefault(_reactSkylight);
+	
+	var _restService = __webpack_require__(173);
+	
+	var restService = _interopRequireWildcard(_restService);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var $ = __webpack_require__(175);
+	
+	var Popup = function (_React$Component) {
+	  _inherits(Popup, _React$Component);
+	
+	  function Popup(props) {
+	    _classCallCheck(this, Popup);
+	
+	    return _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
+	  }
+	
+	  _createClass(Popup, [{
+	    key: 'adduser',
+	    value: function adduser() {
+	      var err = false;
+	      var password = $("#pswrd").val();
+	      var f_name = $("#f_n").val();
+	      var l_name = $("#l_n").val();
+	      var email = $("#eml").val();
+	      var phone = $("#phn").val();
+	      var address = $("#add").val();
+	      var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+	      if (password.trim() == "" || f_name.trim() == "" || l_name.trim() == "" || address.trim() == "" || phone.trim() == "" || email.trim() == "") {
+	        $("#spnErr").text("You must fill in required fields!!! :(");
+	        err = true;
+	      } else {
+	        $("#spnErr").text("");
+	      }
+	      if (phone != "" && !filter.test(phone)) {
+	        $("#spnphn").text("Valid format only!!!");
+	        err = true;
+	      } else {
+	        $("#spnphn").text("");
+	      }
+	      if (!err) {
+	        var user = {
+	          "password": password,
+	          "f_name": f_name,
+	          "l_name": l_name,
+	          "email": email,
+	          "phone": phone,
+	          "address": address
+	        };
+	        console.log(user);
+	        restService.post('/users', user).then(function (fetchProjects) {
+	          console.log("retrn from server");
+	        });
+	        this.refs.simpleDialog.hide();
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'section',
+	          null,
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: function onClick() {
+	                return _this2.refs.simpleDialog.show();
+	              } },
+	            'new user'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactSkylight2.default,
+	          { hideOnOverlayClicked: true, ref: 'simpleDialog', title: 'Welcome to ShareMyBooks' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Hello, thank you for joining us!'
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'please enter your details:'
+	          ),
+	          '*password: ',
+	          _react2.default.createElement('input', { type: 'text', id: 'pswrd' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          '*First name: ',
+	          _react2.default.createElement('input', { type: 'text', id: 'f_n' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          '*Last name:  ',
+	          _react2.default.createElement('input', { type: 'text', id: 'l_n' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          '*Email:      ',
+	          _react2.default.createElement('input', { type: 'text', id: 'eml' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'phone:    ',
+	          _react2.default.createElement('input', { type: 'text', id: 'phn' }),
+	          _react2.default.createElement('span', { id: 'spnphn' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'Address:    ',
+	          _react2.default.createElement('input', { type: 'text', id: 'add' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('span', { id: 'spnErr' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: function onClick() {
+	                return _this2.adduser();
+	              } },
+	            'add'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Popup;
+	}(_react2.default.Component);
+	
+	Popup.displayName = 'Popup';
+	
+	exports.default = Popup;
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "popup.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);
