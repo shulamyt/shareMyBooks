@@ -9,6 +9,7 @@ var ADD_USER="insert into [dbo].[User] ([password],[f_name],[l_name],[email],[ph
 var DEL_USER="delete from [dbo].[User] where id=";
 var GET_USER="select * from [dbo].[User] where id=";
 var FOR_LOGIN="and email=";
+var LOGIN_USER="select * from [dbo].[User] where password=";
 var dbConfig={
 	server:"localhost\\SQLEXPRESS",
 	port:1433,
@@ -103,7 +104,8 @@ UserPersistence.prototype.login = function(password,email){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(GET_USER+password+FOR_LOGIN+"'"+email+"'",
+			console.log(LOGIN_USER+password+FOR_LOGIN+"'"+email+"'");
+			req.query(LOGIN_USER+password+FOR_LOGIN+"'"+email+"'",
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');

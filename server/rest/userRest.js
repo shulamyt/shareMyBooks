@@ -17,7 +17,8 @@ module.exports = function (server) {
     	userService.deleteUser(req.body.id);
     });
     server.post('/users/login', function (req, res) {
-        userService.login(req.body.password,req.body.email).then(function(isUser){
+        userService.login(req.body.user.password,req.body.user.email).then(function(isUser){
+            console.log(isUser);
             res.status(201).json(isUser);
         });
     });

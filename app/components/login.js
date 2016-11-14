@@ -18,14 +18,19 @@ class Login extends React.Component{
 		    	 $("#spnErr").text("");
 		    }
 		    if(!err){
-					restService.post('/users/login').then(function(fetchUser){
+		    	var user={
+		    		"email":email,
+		    		"password":password
+		    	};
+					restService.post('/users/login',user).then(function(fetchUser){
 					console.log("Im here");
 					//result = fetchUser;
 					console.log(fetchUser);
 					if(!fetchUser){
 						$("#noUser").text("one detail or more is incorrect");
+					}else{
+						app.render(fetchUser);
 					}
-					
 					console.log("firstRender");	
 				
 			});
