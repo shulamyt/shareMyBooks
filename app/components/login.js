@@ -1,37 +1,36 @@
 import React from 'react';
 import * as restService from './../service/restService';
-import * as app from './../app';
 var $ = require("jquery");
 
 var user={};
 
 class Login extends React.Component{
 	login(){
-			$("#noUser").text("");
-			var err=false; 
-			var email=$("#email").val();
-			var password=$("#password").val();
-			if(password.trim()=="" || email.trim()==""){
-		        $("#spnErr").text("You must fill in required fields!!! :(");
-		        err=true;
-		    }else{
-		    	 $("#spnErr").text("");
-		    }
-		    if(!err){
-		    	var user={
-		    		"email":email,
-		    		"password":password
-		    	};
-					restService.post('/users/login',user).then(function(fetchUser){
-					console.log("Im here");
-					//result = fetchUser;
-					console.log(fetchUser);
-					if(!fetchUser){
-						$("#noUser").text("one detail or more is incorrect");
-					}else{
-						app.render(fetchUser);
-					}
-					console.log("firstRender");	
+		$("#noUser").text("");
+		var err=false; 
+		var email=$("#email").val();
+		var password=$("#password").val();
+		if(password.trim()=="" || email.trim()==""){
+	        $("#spnErr").text("You must fill in required fields!!! :(");
+	        err=true;
+	    }else{
+	    	 $("#spnErr").text("");
+	    }
+	    if(!err){
+	    	var user={
+	    		"email":email,
+	    		"password":password
+	    	};
+			restService.post('/users/login',user).then(function(fetchUser){
+				console.log("Im here");
+				//result = fetchUser;
+				console.log(fetchUser);
+				if(!fetchUser){
+					$("#noUser").text("one detail or more is incorrect");
+				}else{
+					this.props.onUserChange(fetchUser);
+				}
+				console.log("firstRender");	
 				
 			});
 		}
