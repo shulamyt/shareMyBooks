@@ -14,7 +14,7 @@ var GET_LATING="select b.name,l.loan_date,l.for_how_long from [dbo].[loan] l joi
 
 
 var dbConfig={
-	server:"localhost\\SQLEXPRESS",
+	server:"localhost\\mssqlserver",
 	port:1433,
 	database:"smb_test",
 	user:"sa",

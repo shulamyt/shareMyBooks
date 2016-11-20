@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Login from './components/login.js';
+import Grid from './components/grid.js';
+import Example from './components/popup.js';
 class ShareMyBooks extends React.Component{
 
 	constructor(props){
@@ -31,4 +33,4 @@ class ShareMyBooks extends React.Component{
 		);
 	}
 }
- export default ShareMyBooks;
+export default ShareMyBooks;

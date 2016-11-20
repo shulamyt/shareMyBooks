@@ -12,7 +12,7 @@ var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
 var GET_ALL_BOOKS="select id,name,author,isloan from [dbo].[Book] b where b.user_id= "
 var dbConfig={
-	server:"localhost\\SQLEXPRESS",
+	server:"localhost\\mssqlserver",
 	port:1433,
 	database:"smb_test",
 	user:"sa",

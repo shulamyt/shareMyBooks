@@ -1,6 +1,4 @@
-var userPersistence = require('./../persistence/userPersistence');
-//var u = require('./../model/user');
-
+var userPersistence = require('./../persistence/userPersistence')
 function UserService(){
 	
 };
