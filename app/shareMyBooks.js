@@ -22,13 +22,13 @@ class ShareMyBooks extends React.Component{
 	render(){
 		let loginComponent = null;
 		if(this.state.showLoging === true){
-			loginComponent= <Login onUserChange={this.onUserChange.bind(this)}/>;
+			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this)}/> <Example /></div>;
 		}
 		return(
 			<div>
 				<Grid data={this.state.user} />
 				{loginComponent}
-				<Example />
+				
 			</div>
 		);
 	}

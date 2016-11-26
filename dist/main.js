@@ -16073,8 +16073,7 @@
 	  if (x === y) {
 	    // Steps 1-5, 7-10
 	    // Steps 6.b-6.e: +0 != -0
-	    // Added the nonzero y check to make Flow happy, but it is redundant
-	    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+	    return x !== 0 || 1 / x === 1 / y;
 	  } else {
 	    // Step 6.a: NaN == NaN
 	    return x !== x && y !== y;
@@ -21539,14 +21538,20 @@
 			value: function render() {
 				var loginComponent = null;
 				if (this.state.showLoging === true) {
-					loginComponent = _react2.default.createElement(_login2.default, { onUserChange: this.onUserChange.bind(this) });
+					loginComponent = _react2.default.createElement(
+						'div',
+						null,
+						' ',
+						_react2.default.createElement(_login2.default, { onUserChange: this.onUserChange.bind(this) }),
+						' ',
+						_react2.default.createElement(_popup2.default, null)
+					);
 				}
 				return _react2.default.createElement(
 					'div',
 					null,
 					_react2.default.createElement(_grid2.default, { data: this.state.user }),
-					loginComponent,
-					_react2.default.createElement(_popup2.default, null)
+					loginComponent
 				);
 			}
 		}]);
@@ -21606,6 +21611,7 @@
 		_createClass(Login, [{
 			key: 'login',
 			value: function login() {
+				var func = this.props;
 				$("#noUser").text("");
 				var err = false;
 				var email = $("#email").val();
@@ -21628,9 +21634,11 @@
 						if (!fetchUser) {
 							$("#noUser").text("one detail or more is incorrect");
 						} else {
-							this.props.onUserChange(fetchUser);
+							func.onUserChange(fetchUser);
 						}
 						console.log("firstRender");
+					}, function () {
+						console.log("erroe;");
 					});
 				}
 			}
@@ -21656,7 +21664,7 @@
 					_react2.default.createElement(
 						'button',
 						{ className: 'login', onClick: function onClick() {
-								return _this2.login();
+								return _this2.login(_this2);
 							} },
 						'login'
 					),
