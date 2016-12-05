@@ -25,7 +25,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([{ context: path.resolve(__dirname) ,from: path.join('app/index.html'), force: true }]),
+    new CopyWebpackPlugin([{ context: path.resolve(__dirname) ,from: path.join('app/static'), force: true }]),
     // new SpritesmithPlugin({
     //   src: {
     //     cwd: path.resolve(__dirname, 'resources/images/'),

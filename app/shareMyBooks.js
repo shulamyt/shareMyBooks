@@ -2,12 +2,17 @@ import React from 'react';
 import Login from './components/login.js';
 import Grid from './components/grid.js';
 import Example from './components/popup.js';
+import FixedArea from './components/fixedArea.js';
+import AlertsArea from './components/alertsArea.js';
+import Menu from './components/menu.js';
+import BooksList from './components/booksList.js';
+
 class ShareMyBooks extends React.Component{
 
 	constructor(props){
 		super(props);
 		this.state = {
-			'user': {},
+			'user': { },
 			'showLoging': true
 		}
 	}
@@ -26,9 +31,10 @@ class ShareMyBooks extends React.Component{
 		}
 		return(
 			<div>
-				<Grid data={this.state.user} />
-				{loginComponent}
-				
+				<FixedArea /> 
+				<Menu />
+				<BooksList />
+				<AlertsArea />
 			</div>
 		);
 	}
