@@ -11,10 +11,12 @@ class BooksGrid extends React.Component {
 						  <tr>
 						    <th>Book Name</th>
 						    <th>Author</th> 
+						    <th>Is Loaned?</th> 
 						  </tr>
 						  <tr>
 						    <td>book name</td>
 						    <td>book author</td> 
+						    <td>is loaned</td>
 						  </tr>
 				  	</tbody>
 				</table>
