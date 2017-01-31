@@ -4,8 +4,9 @@ import React from 'react';
 class BooksGrid extends React.Component {
 	
 	render() {
-		return (
-			<div className="books-grid" >
+		var books;
+		if(this.props.data){
+			books=<div className="books-grid" >
 				<table >
 				  	<tbody>
 						  <tr>
@@ -14,13 +15,18 @@ class BooksGrid extends React.Component {
 						    <th>Is Loaned?</th> 
 						  </tr>
 						  <tr>
-						    <td>book name</td>
-						    <td>book author</td> 
-						    <td>is loaned</td>
+						    <td>{this.props.data.name}</td>
+						    <td>{this.props.data.author}</td> 
+						    <td>{this.props.data.isloan}</td>
 						  </tr>
 				  	</tbody>
 				</table>
-			</div>
+			</div>;
+		}else{
+			books=<div></div>;
+		}
+		return (
+			books
 		);
 	}
 }

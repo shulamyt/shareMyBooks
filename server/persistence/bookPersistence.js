@@ -10,7 +10,7 @@ var CNT2_SRCH="%') and user_id=";
 var ADD_BOOK="insert into [dbo].[Book] ([name],[author],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
 var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
-var GET_ALL_BOOKS="select id,name,author,isloan from [dbo].[Book] b where b.user_id= "
+var GET_ALL_BOOKS="select id,name,author,isloan from [dbo].[Book] b where b.user_id="
 var dbConfig={
 	server:"localhost\\mssqlserver",
 	port:1433,
@@ -20,35 +20,34 @@ var dbConfig={
 };
 
 BookPersistence.prototype.addBook=function(book){
-  
-		var conn = new sql.Connection(dbConfig);
-		var req = new sql.Request(conn);
-		conn.connect(function(err){
-			if(err){
-				console.log(err+' error at connecting to database');
-				return null;
-			}
-			console.log("success to connect");
-			req.query(ADD_BOOK+
-				"("+
-				"'"+book.name+"'"+","+
-				"'"+book.author+"'"+","+
-				"'"+book.description+"'"+","+
-				    GET_DATE+","+
-				"'"+book.shelf+"'"+","+
-				"'"+book.clmn+"'"+","+
-				"0,"+
-				"'"+book.userId+"'"+
-				")",
-				function(err,recordset){
-					if(err){
-						console.log(err+' error with query');
-					}
-					else{
-						console.log(recordset);
-					}
-				});
-		});
+	var conn = new sql.Connection(dbConfig);
+	var req = new sql.Request(conn);
+	conn.connect(function(err){
+		if(err){
+			console.log(err+' error at connecting to database');
+			return null;
+		}
+		console.log("success to connect");
+		req.query(ADD_BOOK+
+			"("+
+			"'"+book.name+"'"+","+
+			"'"+book.author+"'"+","+
+			"'"+book.description+"'"+","+
+			    GET_DATE+","+
+			"'"+book.shelf+"'"+","+
+			"'"+book.clmn+"'"+","+
+			"0,"+
+			"'"+book.userId+"'"+
+			")",
+			function(err,recordset){
+				if(err){
+					console.log(err+' error with query');
+				}
+				else{
+					console.log(recordset);
+				}
+			});
+	});
 };
 
 BookPersistence.prototype.getBook = function(id){
@@ -112,6 +111,7 @@ BookPersistence.prototype.getAllBooks=function(userId){
 				return null;
 			}
 			console.log("success to connect");
+			console.log(GET_ALL_BOOKS+userId);
 			req.query(GET_ALL_BOOKS+userId,
 				function(err,recordset){
 					if(err){

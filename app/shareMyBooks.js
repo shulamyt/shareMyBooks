@@ -13,6 +13,7 @@ class ShareMyBooks extends React.Component{
 		super(props);
 		this.state = {
 			'user': { },
+			'myBooks':[ ],
 			'showLoging': true
 		}
 	}
@@ -23,19 +24,25 @@ class ShareMyBooks extends React.Component{
 			'showLoging': false
 		});
 	}
-
+	getMyBooks(books){
+		this.setState({
+			'myBooks':books
+		});
+	}
 	render(){
 		let loginComponent = null;
 		if(this.state.showLoging === true){
-			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this)}/> <Example /></div>;
+			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this) }/> <Example /></div>;
+		}else{
+			loginComponent=<div>
+				<FixedArea /> 
+				<Menu  />
+				<BooksList data={this.state.myBooks} userId={this.state.user.id} getMyBooks={this.getMyBooks.bind(this)}/>
+				<AlertsArea />
+			</div>;
 		}
 		return(
-			<div>
-				<FixedArea /> 
-				<Menu />
-				<BooksList />
-				<AlertsArea />
-			</div>
+			loginComponent
 		);
 	}
 }

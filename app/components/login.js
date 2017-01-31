@@ -1,11 +1,10 @@
 import React from 'react';
 import * as restService from './../service/restService';
 var $ = require("jquery");
-
-var user={};
-
+ 
 class Login extends React.Component{
 	login(){
+		var thisProps=this.props;
 		$("#noUser").text("");
 		var err=false; 
 		var email=$("#email").val();
@@ -28,7 +27,7 @@ class Login extends React.Component{
 				if(!fetchUser){
 					$("#noUser").text("one detail or more is incorrect");
 				}else{
-					this.props.onUserChange(fetchUser);
+					thisProps.onUserChange(fetchUser);
 				}
 				console.log("firstRender");	
 				
