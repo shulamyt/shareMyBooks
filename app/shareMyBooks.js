@@ -25,6 +25,7 @@ class ShareMyBooks extends React.Component{
 		});
 	}
 	getMyBooks(books){
+		console.log(books);
 		this.setState({
 			'myBooks':books
 		});
@@ -36,8 +37,8 @@ class ShareMyBooks extends React.Component{
 		}else{
 			loginComponent=<div>
 				<FixedArea /> 
-				<Menu  />
-				<BooksList data={this.state.myBooks} userId={this.state.user.id} getMyBooks={this.getMyBooks.bind(this)}/>
+				<Menu userId={this.state.user.id} getMyBooks={this.getMyBooks.bind(this)} />
+				<BooksList data={this.state.myBooks} />
 				<AlertsArea />
 			</div>;
 		}

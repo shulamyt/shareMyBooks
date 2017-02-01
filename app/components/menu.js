@@ -18,8 +18,6 @@ class Menu extends React.Component {
 	render() {
 		return (
 			<div className="menu" >
-				<div>{this.props.userId}</div>
-				<div>gggg:)</div>
 				<button onClick={()=>this.getBooks('/books/getAll/'+this.props.userId)}>My Books</button>
 				<button>Books I Loaned</button>
 				<button>My Loaned Books</button>
