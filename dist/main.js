@@ -32803,62 +32803,65 @@
 		_createClass(BooksGrid, [{
 			key: "render",
 			value: function render() {
-				var books;
-				var data = this.props.data;
-				console.log(data);
-				if (data) {
-					if (data.length != 0) books = _react2.default.createElement(
-						"div",
-						{ className: "books-grid" },
+				var books = _react2.default.createElement("div", null);
+				var data = [];
+				for (var book in this.props.data) {
+					data.push(_react2.default.createElement(
+						"tr",
+						null,
+						" ",
 						_react2.default.createElement(
-							"table",
+							"td",
+							null,
+							this.props.data[book].name
+						),
+						" ",
+						_react2.default.createElement(
+							"td",
+							null,
+							this.props.data[book].author
+						),
+						" ",
+						_react2.default.createElement(
+							"td",
+							null,
+							this.props.data[book].isloan
+						),
+						" "
+					));
+				}
+				if (data) if (data.length != 0) books = _react2.default.createElement(
+					"div",
+					{ className: "books-grid" },
+					_react2.default.createElement(
+						"table",
+						null,
+						_react2.default.createElement(
+							"tbody",
 							null,
 							_react2.default.createElement(
-								"tbody",
+								"tr",
 								null,
 								_react2.default.createElement(
-									"tr",
+									"th",
 									null,
-									_react2.default.createElement(
-										"th",
-										null,
-										"Book Name"
-									),
-									_react2.default.createElement(
-										"th",
-										null,
-										"Author"
-									),
-									_react2.default.createElement(
-										"th",
-										null,
-										"Is Loaned?"
-									)
+									"Book Name"
 								),
-								"for(var book in data) ",
 								_react2.default.createElement(
-									"tr",
+									"th",
 									null,
-									_react2.default.createElement(
-										"td",
-										null,
-										data[book].name
-									),
-									_react2.default.createElement(
-										"td",
-										null,
-										data[book].author
-									),
-									_react2.default.createElement(
-										"td",
-										null,
-										data[book].isloan
-									)
+									"Author"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"Is Loaned?"
 								)
-							)
+							),
+							data
 						)
-					);else books = _react2.default.createElement("div", null);
-				} else books = _react2.default.createElement("div", null);
+					)
+				);
 				console.log(books);
 				return books;
 			}
@@ -32869,7 +32872,85 @@
 	
 	exports.default = BooksGrid;
 	
-	// append each one of them to the row in question, in order
+	//   // append each one of them to the row in question, in order
+	
+	
+	//   function tableCreate() {
+	//       //body reference 
+	//       var book = <div></div>
+	//       var tbl     = document.createElement("table");
+	//       var tblBody = document.createElement("tbody");
+	//       var row = document.createElement("tr");
+	//    var title = document.createElement("th");    
+	//    var titleText = document.createTextNode("Book Name"); 
+	//    title.appendChild(titleText);
+	//    row.appendChild(title);
+	//    title = document.createElement("th");    
+	//    titleText = document.createTextNode("Auther"); 
+	//    title.appendChild(titleText);
+	//    row.appendChild(title);   
+	//    title = document.createElement("th");    
+	//    titleText = document.createTextNode("Is Loan?"); 
+	//    title.appendChild(titleText);
+	//    row.appendChild(title);
+	//    tblBody.appendChild(row);
+	//    var row=var row = document.createElement("tr");
+	//    for (var i =0; i <data.length; i++) {
+	//    	cell = document.createElement("td");    
+	//    	cellText = document.createTextNode(data[i].name);
+	//    	cell.appendChild(cellText);
+	//    	row.appendChild(cell); 
+	//    	cell = document.createElement("td");    
+	//    	cellText = document.createTextNode(data[i].auther);
+	//    	cell.appendChild(cellText);
+	//    	row.appendChild(cell);
+	//    	cell = document.createElement("td");    
+	//    	cellText = document.createTextNode(data[i].isloan);
+	//    	cell.appendChild(cellText);
+	//    	row.appendChild(cell);
+	//    }
+	//       tblBody.appendChild(row);
+	//       tbl.appendChild(tblBody);
+	//       book.appendChild(tbl);
+	//   }
+	
+	// if(data)
+	// 	if(data.length!=0){
+	// 		var tbl     = document.createElement("table");
+	//         var tblBody = document.createElement("tbody");
+	//         var row = document.createElement("tr");
+	// 	    var title = document.createElement("th");    
+	// 	    var titleText = document.createTextNode("Book Name"); 
+	// 	    title.appendChild(titleText);
+	// 	    row.appendChild(title);
+	// 	    title = document.createElement("th");    
+	// 	    titleText = document.createTextNode("Auther"); 
+	// 	    title.appendChild(titleText);
+	// 	    row.appendChild(title);   
+	// 	    title = document.createElement("th");    
+	// 	    titleText = document.createTextNode("Is Loan?"); 
+	// 	    title.appendChild(titleText);
+	// 	    row.appendChild(title);
+	// 	    tblBody.appendChild(row);
+	// 	    var row = document.createElement("tr");
+	// 	    for (var book in data) {
+	// 	    	var cell = document.createElement("td");    
+	// 	    	var cellText = document.createTextNode(book.name);
+	// 	    	cell.appendChild(cellText);
+	// 	    	row.appendChild(cell); 
+	// 	    	cell = document.createElement("td");    
+	// 	    	cellText = document.createTextNode(book.auther);
+	// 	    	cell.appendChild(cellText);
+	// 	    	row.appendChild(cell);
+	// 	    	cell = document.createElement("td");    
+	// 	    	cellText = document.createTextNode(book.isloan);
+	// 	    	cell.appendChild(cellText);
+	// 	    	row.appendChild(cell);
+	// 	    }
+	//         tblBody.appendChild(row);
+	//         tbl.appendChild(tblBody);
+	//         books=<div> {tbl} </div>;
+	// 	}
 	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "booksGrid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
