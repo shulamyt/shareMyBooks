@@ -21466,9 +21466,9 @@
 	
 	var _grid2 = _interopRequireDefault(_grid);
 	
-	var _popup = __webpack_require__(178);
+	var _newUserPopup = __webpack_require__(178);
 	
-	var _popup2 = _interopRequireDefault(_popup);
+	var _newUserPopup2 = _interopRequireDefault(_newUserPopup);
 	
 	var _fixedArea = __webpack_require__(183);
 	
@@ -21537,7 +21537,7 @@
 						' ',
 						_react2.default.createElement(_login2.default, { onUserChange: this.onUserChange.bind(this) }),
 						' ',
-						_react2.default.createElement(_popup2.default, null)
+						_react2.default.createElement(_newUserPopup2.default, null)
 					);
 				} else {
 					loginComponent = _react2.default.createElement(
@@ -32107,16 +32107,16 @@
 	
 	var $ = __webpack_require__(176);
 	
-	var Popup = function (_React$Component) {
-	  _inherits(Popup, _React$Component);
+	var NewUserPopup = function (_React$Component) {
+	  _inherits(NewUserPopup, _React$Component);
 	
-	  function Popup(props) {
-	    _classCallCheck(this, Popup);
+	  function NewUserPopup(props) {
+	    _classCallCheck(this, NewUserPopup);
 	
-	    return _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
+	    return _possibleConstructorReturn(this, (NewUserPopup.__proto__ || Object.getPrototypeOf(NewUserPopup)).call(this, props));
 	  }
 	
-	  _createClass(Popup, [{
+	  _createClass(NewUserPopup, [{
 	    key: 'isEmail',
 	    value: function isEmail(email) {
 	      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -32241,14 +32241,14 @@
 	    }
 	  }]);
 	
-	  return Popup;
+	  return NewUserPopup;
 	}(_react2.default.Component);
 	
-	Popup.displayName = 'Popup';
+	NewUserPopup.displayName = 'NewUserPopup';
 	
-	exports.default = Popup;
+	exports.default = NewUserPopup;
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "popup.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "newUserPopup.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 179 */
@@ -32872,86 +32872,6 @@
 	
 	exports.default = BooksGrid;
 	
-	//   // append each one of them to the row in question, in order
-	
-	
-	//   function tableCreate() {
-	//       //body reference 
-	//       var book = <div></div>
-	//       var tbl     = document.createElement("table");
-	//       var tblBody = document.createElement("tbody");
-	//       var row = document.createElement("tr");
-	//    var title = document.createElement("th");    
-	//    var titleText = document.createTextNode("Book Name"); 
-	//    title.appendChild(titleText);
-	//    row.appendChild(title);
-	//    title = document.createElement("th");    
-	//    titleText = document.createTextNode("Auther"); 
-	//    title.appendChild(titleText);
-	//    row.appendChild(title);   
-	//    title = document.createElement("th");    
-	//    titleText = document.createTextNode("Is Loan?"); 
-	//    title.appendChild(titleText);
-	//    row.appendChild(title);
-	//    tblBody.appendChild(row);
-	//    var row=var row = document.createElement("tr");
-	//    for (var i =0; i <data.length; i++) {
-	//    	cell = document.createElement("td");    
-	//    	cellText = document.createTextNode(data[i].name);
-	//    	cell.appendChild(cellText);
-	//    	row.appendChild(cell); 
-	//    	cell = document.createElement("td");    
-	//    	cellText = document.createTextNode(data[i].auther);
-	//    	cell.appendChild(cellText);
-	//    	row.appendChild(cell);
-	//    	cell = document.createElement("td");    
-	//    	cellText = document.createTextNode(data[i].isloan);
-	//    	cell.appendChild(cellText);
-	//    	row.appendChild(cell);
-	//    }
-	//       tblBody.appendChild(row);
-	//       tbl.appendChild(tblBody);
-	//       book.appendChild(tbl);
-	//   }
-	
-	// if(data)
-	// 	if(data.length!=0){
-	// 		var tbl     = document.createElement("table");
-	//         var tblBody = document.createElement("tbody");
-	//         var row = document.createElement("tr");
-	// 	    var title = document.createElement("th");    
-	// 	    var titleText = document.createTextNode("Book Name"); 
-	// 	    title.appendChild(titleText);
-	// 	    row.appendChild(title);
-	// 	    title = document.createElement("th");    
-	// 	    titleText = document.createTextNode("Auther"); 
-	// 	    title.appendChild(titleText);
-	// 	    row.appendChild(title);   
-	// 	    title = document.createElement("th");    
-	// 	    titleText = document.createTextNode("Is Loan?"); 
-	// 	    title.appendChild(titleText);
-	// 	    row.appendChild(title);
-	// 	    tblBody.appendChild(row);
-	// 	    var row = document.createElement("tr");
-	// 	    for (var book in data) {
-	// 	    	var cell = document.createElement("td");    
-	// 	    	var cellText = document.createTextNode(book.name);
-	// 	    	cell.appendChild(cellText);
-	// 	    	row.appendChild(cell); 
-	// 	    	cell = document.createElement("td");    
-	// 	    	cellText = document.createTextNode(book.auther);
-	// 	    	cell.appendChild(cellText);
-	// 	    	row.appendChild(cell);
-	// 	    	cell = document.createElement("td");    
-	// 	    	cellText = document.createTextNode(book.isloan);
-	// 	    	cell.appendChild(cellText);
-	// 	    	row.appendChild(cell);
-	// 	    }
-	//         tblBody.appendChild(row);
-	//         tbl.appendChild(tblBody);
-	//         books=<div> {tbl} </div>;
-	// 	}
-	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "booksGrid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
@@ -33125,6 +33045,10 @@
 	
 	var _booksGrid2 = _interopRequireDefault(_booksGrid);
 	
+	var _newBookPopup = __webpack_require__(190);
+	
+	var _newBookPopup2 = _interopRequireDefault(_newBookPopup);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33136,19 +33060,43 @@
 	var BooksList = function (_React$Component) {
 		_inherits(BooksList, _React$Component);
 	
-		function BooksList() {
+		function BooksList(props) {
 			_classCallCheck(this, BooksList);
 	
-			return _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (BooksList.__proto__ || Object.getPrototypeOf(BooksList)).call(this, props));
+	
+			_this.state = {
+				'showPopup': false
+			};
+			return _this;
 		}
 	
 		_createClass(BooksList, [{
+			key: 'showPopupf',
+			value: function showPopupf() {
+				this.setState({
+					'showPopup': true
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var _this2 = this;
+	
+				var popup;
 				console.log(this.props.data);
+				if (this.state.showPopup) popup = _react2.default.createElement(_newBookPopup2.default, null);else popup = _react2.default.createElement('div', null);
 				return _react2.default.createElement(
 					'div',
 					{ className: 'books-list' },
+					_react2.default.createElement(
+						'button',
+						{ name: 'addBook', onClick: function onClick() {
+								return _this2.showPopupf();
+							} },
+						'add book'
+					),
+					popup,
 					_react2.default.createElement(_booksGrid2.default, { data: this.props.data })
 				);
 			}
@@ -33160,6 +33108,154 @@
 	exports.default = BooksList;
 	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "booksList.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactSkylight = __webpack_require__(179);
+	
+	var _reactSkylight2 = _interopRequireDefault(_reactSkylight);
+	
+	var _restService = __webpack_require__(175);
+	
+	var restService = _interopRequireWildcard(_restService);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var $ = __webpack_require__(176);
+	
+	var NewBookPopup = function (_React$Component) {
+	  _inherits(NewBookPopup, _React$Component);
+	
+	  function NewBookPopup(props) {
+	    _classCallCheck(this, NewBookPopup);
+	
+	    return _possibleConstructorReturn(this, (NewBookPopup.__proto__ || Object.getPrototypeOf(NewBookPopup)).call(this, props));
+	  }
+	
+	  _createClass(NewBookPopup, [{
+	    key: 'addBook',
+	    value: function addBook() {
+	      var name = $("#name").val();
+	      var auther = $("#auther").val();
+	      var description = $("#description").val();
+	      var created_at = $("#cday").val();
+	      var shelf = $("#shelf").val();
+	      var column = $("#colmn").val();
+	      var isloan = $("#isloan").checked ? true : false;
+	      var book = {
+	        "name": name,
+	        "auther": auther,
+	        "description": description,
+	        "created_at": created_at,
+	        "shelf": shelf,
+	        "column": column,
+	        "isloan": isloan
+	      };
+	      restService.post('/books', book).then(function (fetchProjects) {
+	        console.log("retrn from server");
+	      });
+	      this.refs.simpleDialog.hide();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'section',
+	          null,
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: function onClick() {
+	                return _this2.refs.simpleDialog.show();
+	              } },
+	            'add book'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactSkylight2.default,
+	          { hideOnOverlayClicked: true, ref: 'simpleDialog', title: 'Add a New Book' },
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'please enter details:'
+	          ),
+	          '*name: ',
+	          _react2.default.createElement('input', { type: 'text', id: 'name' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'auther: ',
+	          _react2.default.createElement('input', { type: 'text', id: 'auther' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'description:  ',
+	          _react2.default.createElement('input', { type: 'text', id: 'description' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'created_at:      ',
+	          _react2.default.createElement('input', { type: 'date', id: 'cday' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'shelf:    ',
+	          _react2.default.createElement('input', { type: 'text', id: 'shelf' }),
+	          _react2.default.createElement('span', { id: 'spnphn' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'column:    ',
+	          _react2.default.createElement('input', { type: 'text', id: 'colmn' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          'isloan: ',
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'isloan' }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: function onClick() {
+	                return _this2.addBook();
+	              } },
+	            'add'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return NewBookPopup;
+	}(_react2.default.Component);
+	
+	NewBookPopup.displayName = 'NewBookPopup';
+	
+	exports.default = NewBookPopup;
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "newBookPopup.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);

@@ -4,7 +4,7 @@ var $ = require("jquery");
 import * as restService from './../service/restService';
 
 
-class Popup extends React.Component {
+class NewUserPopup extends React.Component {
   constructor(props){
     super(props);
   }
@@ -83,6 +83,6 @@ class Popup extends React.Component {
   }
 }
 
-Popup.displayName = 'Popup';
+NewUserPopup.displayName = 'NewUserPopup';
 
-export default Popup;
+export default NewUserPopup;
