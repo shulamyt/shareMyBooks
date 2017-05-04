@@ -23,14 +23,24 @@ BookService.prototype.deleteBook=function(id){
 BookService.prototype.getAllBooks=function(userId){
 	var promise =  new Promise(function(resolve, reject) {
 			bookPersistence.getAllBooks(userId).then(function(books){
+				console.log("in BookService"+books.length)
 				resolve(books);
 			});
 		});
 	return promise;
 };
-BookService.prototype.search=function(query,userId){
+BookService.prototype.search=function(tirm){
 	var promise =  new Promise(function(resolve, reject) {
-			bookPersistence.search(query,userId).then(function(books){
+			bookPersistence.search(query).then(function(books){
+				resolve(books);
+			});
+		});
+	return promise;
+};
+
+BookService.prototype.searchInMyLibrary=function(tirm,userId){
+	var promise =  new Promise(function(resolve, reject) {
+			bookPersistence.searchInMyLibrary(tirm,userId).then(function(books){
 				resolve(books);
 			});
 		});

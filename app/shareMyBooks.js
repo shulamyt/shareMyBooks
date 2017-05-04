@@ -21,13 +21,15 @@ class ShareMyBooks extends React.Component{
 	onUserChange(user){
 		this.setState({
 			'user': user,
-			'showLoging': false
+			'showLoging': false,
+			'whichGrid':"MyBooks"
 		});
 	}
-	getMyBooks(books){
+	getBooks(books,which){
 		console.log(books);
 		this.setState({
-			'myBooks':books
+			'Books':books,
+			'whichGrid':which
 		});
 	}
 	render(){
@@ -37,8 +39,8 @@ class ShareMyBooks extends React.Component{
 		}else{
 			loginComponent=<div>
 				<FixedArea /> 
-				<Menu userId={this.state.user.id} getMyBooks={this.getMyBooks.bind(this)} />
-				<BooksList data={this.state.myBooks} />
+				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
+				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
 				<AlertsArea />
 			</div>;
 		}

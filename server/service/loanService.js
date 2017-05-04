@@ -34,6 +34,22 @@ LoanService.prototype.getallWaiting=function(userId){
 		});
 	return promise;
 };
+LoanService.prototype.getBorrowed=function(userId){
+	var promise =  new Promise(function(resolve, reject) {
+			loanPersistence.getBorrowed(userId).then(function(loans){
+				resolve(loans);
+			});
+		});
+	return promise;
+};
+LoanService.prototype.getUsersLentBooks=function(userId){
+	var promise =  new Promise(function(resolve, reject) {
+			loanPersistence.getUsersLentBooks(userId).then(function(loans){
+				resolve(loans);
+			});
+		});
+	return promise;
+};
 
 LoanService.prototype.getAllLating=function(userId){
 	var promise =  new Promise(function(resolve, reject) {

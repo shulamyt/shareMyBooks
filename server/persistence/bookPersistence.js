@@ -4,13 +4,14 @@ function BookPersistence(){
 	
 };
 var GET_BOOK_BY_ID="select * from [dbo].[Book] b where b.id=";
-var SRCH_BOOK="select id,name,author,isloan from [dbo].[Book] where (name like '%";
-var CNT_SRCH="%' or outhor like '%";
-var CNT2_SRCH="%') and user_id=";
+var SRCH_BOOK="select id,name,author,isloan,user_id from [dbo].[Book] where (name like '%";
+var CNT_SRCH="%' or author like '%";
+var CNT2_SRCH="%') and isloan='false'";
+var CNT2_SRCH_PERSONAL="%') and user_id=";
 var ADD_BOOK="insert into [dbo].[Book] ([name],[author],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
 var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
-var GET_ALL_BOOKS="select id,name,author,isloan from [dbo].[Book] b where b.user_id="
+var GET_ALL_BOOKS="select id,name,author,description,shelf,clmn,isloan from [dbo].[Book] b where b.user_id="
 var dbConfig={
 	server:"localhost\\mssqlserver",
 	port:1433,
@@ -76,7 +77,7 @@ BookPersistence.prototype.getBook = function(id){
 	return promise;
 };
 
-BookPersistence.prototype.search=function(query,userId){
+BookPersistence.prototype.search=function(tirm){
   var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);
 		var req = new sql.Request(conn);
@@ -86,7 +87,7 @@ BookPersistence.prototype.search=function(query,userId){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(SRCH_BOOK+query+CNT_SRCH+query+CNT2_SRCH+userId,
+			req.query(SRCH_BOOK+tirm+CNT_SRCH+tirm+CNT2_SRCH,
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
@@ -94,7 +95,32 @@ BookPersistence.prototype.search=function(query,userId){
 					}
 					else{
 						console.log(recordset);
-						resolve(recordset[0]);
+						resolve(recordset);
+					}
+				});
+		});
+	});
+	return promise;
+}
+BookPersistence.prototype.searchInMyLibrary=function(tirm,userId){
+  var promise =  new Promise(function(resolve, reject) {
+		var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to connect");
+			req.query(SRCH_BOOK+tirm+CNT_SRCH+tirm+CNT2_SRCH_PERSONAL+userId,
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+						resolve(null);
+					}
+					else{
+						console.log(recordset);
+						resolve(recordset);
 					}
 				});
 		});
@@ -111,7 +137,6 @@ BookPersistence.prototype.getAllBooks=function(userId){
 				return null;
 			}
 			console.log("success to connect");
-			console.log(GET_ALL_BOOKS+userId);
 			req.query(GET_ALL_BOOKS+userId,
 				function(err,recordset){
 					if(err){
@@ -120,7 +145,7 @@ BookPersistence.prototype.getAllBooks=function(userId){
 					}
 					else{
 						console.log(recordset);
-						resolve(recordset[0]);
+						resolve(recordset);
 					}
 				});
 		});

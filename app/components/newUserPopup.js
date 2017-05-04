@@ -36,13 +36,13 @@ class NewUserPopup extends React.Component {
     else{
       $("#spnphn").text("");
     }
-    if(email!="" && !regex.test(email)){
-      $("#spneml").text("Valid format only!!!");
-        err=true;
-    }
-    else{
-      $("#spneml").text("");
-    }
+    // if(email!="" && !regex.test(email)){
+    //   $("#spneml").text("Valid format only!!!");
+    //     err=true;
+    // }
+    // else{
+    //   $("#spneml").text("");
+    // }
     if (!err){
       var user={
       "password":password,
