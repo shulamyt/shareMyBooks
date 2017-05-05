@@ -1,7 +1,16 @@
 var bookService = require('./../service/bookService');
 
 module.exports = function (server) {
+    //get all my books
+    server.get('/books/getAll/:idUser',function(req,res){
 
+        bookService.getAllBooks(req.params.idUser).then(function(books){
+            console.log(books);
+            res.status(201).json(books);
+        });
+
+    });
+    
     //search for a book in pulic library
     server.get('/books/search', function (req, res) {
         console.log(req.query.tirm);
@@ -15,14 +24,6 @@ module.exports = function (server) {
     server.get('/books/searchInMyLibrary', function (req, res) {
         console.log(req.query);
         bookService.searchInMyLibrary(req.query.tirm,req.query.userId).then(function(books){
-            console.log(books);
-            res.status(201).json(book);
-        });
-    });
-
-    //get all my books
-    server.get('/books/getAll/:userId', function (req, res) {
-        bookService.getAllBooks(req.params.userId).then(function(books){
             console.log(books);
             res.status(201).json(book);
         });

@@ -16040,8 +16040,7 @@
 	  if (x === y) {
 	    // Steps 1-5, 7-10
 	    // Steps 6.b-6.e: +0 != -0
-	    // Added the nonzero y check to make Flow happy, but it is redundant
-	    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+	    return x !== 0 || 1 / x === 1 / y;
 	  } else {
 	    // Step 6.a: NaN == NaN
 	    return x !== x && y !== y;
@@ -33078,14 +33077,14 @@
 						{ onClick: function onClick() {
 								return _this2.getBooks('/loans/borrowed/' + _this2.props.userId, "MyBorrowedBooksGrid");
 							} },
-						'\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05E9\u05D0\u05DC\u05EA\u05D9'
+						'ספרים ששאלתי'
 					),
 					_react2.default.createElement(
 						'button',
 						{ onClick: function onClick() {
 								return _this2.getBooks('/loans/lent/' + _this2.props.userId, "MyLentBooksGrid");
 							} },
-						'\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05D4\u05E9\u05D0\u05DC\u05EA\u05D9'
+						'ספרים שהשאלתי'
 					)
 				);
 			}
