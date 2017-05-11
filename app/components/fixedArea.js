@@ -6,7 +6,7 @@ class FixedArea extends React.Component {
 	render() {
 		return (
 			<div className="fixed-area" >
-				<Search/>
+				<Search getBooks={this.props.getBooks}/>
 			</div>
 		);
 	}

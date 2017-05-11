@@ -38,7 +38,7 @@ class ShareMyBooks extends React.Component{
 			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this) }/> <NewUserPopup /></div>;
 		}else{
 			loginComponent=<div>
-				<FixedArea /> 
+				<FixedArea getBooks={this.getBooks.bind(this)}/> 
 				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
 				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
 				<AlertsArea />
@@ -48,5 +48,6 @@ class ShareMyBooks extends React.Component{
 			loginComponent
 		);
 	}
+	
 }
 export default ShareMyBooks;

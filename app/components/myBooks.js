@@ -33,7 +33,6 @@ class MyBooks extends React.Component {
 				</div>;
 			}
 		}
-		console.log(books)
 		return (
 			books
 		);

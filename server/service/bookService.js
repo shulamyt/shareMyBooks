@@ -29,18 +29,28 @@ BookService.prototype.getAllBooks=function(userId){
 		});
 	return promise;
 };
-BookService.prototype.search=function(tirm){
+
+BookService.prototype.search=function(term){
 	var promise =  new Promise(function(resolve, reject) {
-			bookPersistence.search(query).then(function(books){
+			bookPersistence.search(term).then(function(books){
 				resolve(books);
 			});
 		});
 	return promise;
 };
 
-BookService.prototype.searchInMyLibrary=function(tirm,userId){
+BookService.prototype.searchInPublicLibrary=function(term){
 	var promise =  new Promise(function(resolve, reject) {
-			bookPersistence.searchInMyLibrary(tirm,userId).then(function(books){
+			bookPersistence.searchInPublicLibrary(term).then(function(books){
+				resolve(books);
+			});
+		});
+	return promise;
+};
+
+BookService.prototype.searchInMyLibrary=function(term,userId){
+	var promise =  new Promise(function(resolve, reject) {
+			bookPersistence.searchInMyLibrary(term,userId).then(function(books){
 				resolve(books);
 			});
 		});

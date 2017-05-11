@@ -5,7 +5,6 @@ class Menu extends React.Component {
 	getBooks(path,which){
 		var thisProps=this.props;
 		restService.get(path).then(function(fetchBooks){
-			console.log("Im here");
 			console.log(fetchBooks);
 			if(!fetchBooks){
 				$("#noUser").text("one detail or more is incorrect");

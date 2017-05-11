@@ -16040,7 +16040,8 @@
 	  if (x === y) {
 	    // Steps 1-5, 7-10
 	    // Steps 6.b-6.e: +0 != -0
-	    return x !== 0 || 1 / x === 1 / y;
+	    // Added the nonzero y check to make Flow happy, but it is redundant
+	    return x !== 0 || y !== 0 || 1 / x === 1 / y;
 	  } else {
 	    // Step 6.a: NaN == NaN
 	    return x !== x && y !== y;
@@ -21544,7 +21545,7 @@
 					loginComponent = _react2.default.createElement(
 						'div',
 						null,
-						_react2.default.createElement(_fixedArea2.default, null),
+						_react2.default.createElement(_fixedArea2.default, { getBooks: this.getBooks.bind(this) }),
 						_react2.default.createElement(_menu2.default, { userId: this.state.user.id, getBooks: this.getBooks.bind(this) }),
 						_react2.default.createElement(_booksList2.default, { data: this.state.Books, whichGrid: this.state.whichGrid }),
 						_react2.default.createElement(_alertsArea2.default, null)
@@ -32640,7 +32641,7 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'fixed-area' },
-					_react2.default.createElement(_search2.default, null)
+					_react2.default.createElement(_search2.default, { getBooks: this.props.getBooks })
 				);
 			}
 		}]);
@@ -32658,7 +32659,7 @@
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 	
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -32669,6 +32670,12 @@
 	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _restService = __webpack_require__(175);
+	
+	var restService = _interopRequireWildcard(_restService);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -32681,30 +32688,92 @@
 	var Search = function (_React$Component) {
 		_inherits(Search, _React$Component);
 	
-		function Search() {
+		function Search(props) {
 			_classCallCheck(this, Search);
 	
-			return _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
+	
+			_this.state = {
+				BookNameValue: "",
+				AuthorValue: "",
+				OwnerValue: "",
+				PublishValue: "",
+				PublishYearValue: ""
+			};
+			return _this;
 		}
 	
 		_createClass(Search, [{
-			key: "render",
+			key: 'updateInputBookNameValue',
+			value: function updateInputBookNameValue(evt) {
+				this.setState({
+					BookNameValue: evt.target.value
+				});
+			}
+		}, {
+			key: 'updateInputAuthorValue',
+			value: function updateInputAuthorValue(evt) {
+				this.setState({
+					AuthorValue: evt.target.value
+				});
+			}
+		}, {
+			key: 'updateInputOwnerValue',
+			value: function updateInputOwnerValue(evt) {
+				this.setState({
+					OwnerValue: evt.target.value
+				});
+			}
+		}, {
+			key: 'updateInputPublishValue',
+			value: function updateInputPublishValue(evt) {
+				this.setState({
+					PublishValue: evt.target.value
+				});
+			}
+		}, {
+			key: 'updateInputPublishYearValue',
+			value: function updateInputPublishYearValue(evt) {
+				this.setState({
+					PublishYearValue: evt.target.value
+				});
+			}
+		}, {
+			key: 'getSearchedBooksResult',
+			value: function getSearchedBooksResult() {
+				var thisProps = this.props;
+				var path = "/books/search/?term=" + this.state.BookNameValue + "~" + this.state.AuthorValue + "~" + this.state.OwnerValue + "~" + this.state.PublishValue + "~" + this.state.PublishYearValue;
+				//var path="/books/getAll/";
+				restService.get(path).then(function (fetchBooks) {
+					thisProps.getBooks(fetchBooks, "SearchResults");
+				});
+			}
+		}, {
+			key: 'render',
 			value: function render() {
+				var _this2 = this;
+	
 				return _react2.default.createElement(
-					"div",
-					{ className: "search" },
+					'div',
+					{ className: 'search' },
 					_react2.default.createElement(
-						"button",
-						null,
-						"Search"
+						'button',
+						{ onClick: function onClick() {
+								return _this2.getSearchedBooksResult();
+							} },
+						'Search'
 					),
-					_react2.default.createElement("input", { type: "text" }),
-					_react2.default.createElement("input", { type: "checkbox", name: "search-filter", value: "my" }),
-					" My library",
-					_react2.default.createElement("br", null),
-					_react2.default.createElement("input", { type: "checkbox", name: "search-filter", value: "shared", checked: true }),
-					" Shared library",
-					_react2.default.createElement("br", null)
+					_react2.default.createElement('input', { placeholder: '\u05E9\u05DD \u05E1\u05E4\u05E8', id: 'searchBookName', type: 'text', onChange: this.updateInputBookNameValue.bind(this) }),
+					_react2.default.createElement('input', { placeholder: '\u05E9\u05DD \u05E1\u05D5\u05E4\u05E8', id: 'searchAutherName', type: 'text', onChange: this.updateInputAuthorValue.bind(this) }),
+					_react2.default.createElement('input', { placeholder: '\u05D1\u05E2\u05DC\u05D9\u05DD', id: 'searchOwnerName', type: 'text', onChange: this.updateInputOwnerValue.bind(this) }),
+					_react2.default.createElement('input', { placeholder: '\u05E9\u05DD \u05D4\u05D5\u05E6\u05D0\u05D4', id: 'searchPublishValue', type: 'text', onChange: this.updateInputPublishValue.bind(this) }),
+					_react2.default.createElement('input', { placeholder: '\u05E9\u05E0\u05EA \u05D4\u05D5\u05E6\u05D0\u05D4', id: 'searchPublishYear', type: 'number', min: '1800', max: '2017', onChange: this.updateInputPublishYearValue.bind(this) }),
+					_react2.default.createElement('input', { type: 'checkbox', name: 'search-filter', value: 'my' }),
+					' My library',
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('input', { type: 'checkbox', name: 'search-filter', value: 'shared', checked: true }),
+					' Shared library',
+					_react2.default.createElement('br', null)
 				);
 			}
 		}]);
@@ -33047,7 +33116,6 @@
 			value: function getBooks(path, which) {
 				var thisProps = this.props;
 				restService.get(path).then(function (fetchBooks) {
-					console.log("Im here");
 					console.log(fetchBooks);
 					if (!fetchBooks) {
 						$("#noUser").text("one detail or more is incorrect");
@@ -33077,14 +33145,14 @@
 						{ onClick: function onClick() {
 								return _this2.getBooks('/loans/borrowed/' + _this2.props.userId, "MyBorrowedBooksGrid");
 							} },
-						'ספרים ששאלתי'
+						'\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05E9\u05D0\u05DC\u05EA\u05D9'
 					),
 					_react2.default.createElement(
 						'button',
 						{ onClick: function onClick() {
 								return _this2.getBooks('/loans/lent/' + _this2.props.userId, "MyLentBooksGrid");
 							} },
-						'ספרים שהשאלתי'
+						'\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05D4\u05E9\u05D0\u05DC\u05EA\u05D9'
 					)
 				);
 			}
@@ -33469,7 +33537,6 @@
 						);
 					}
 				}
-				console.log(books);
 				return books;
 			}
 		}]);
