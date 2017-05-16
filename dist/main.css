@@ -1,3 +1,9 @@
 /*.fixed-area{
 	position:fixed;
 }*/
+.expandSubGrid{
+	display: block;
+}
+.toggleSubGrid{
+	display: none;
+}

@@ -32742,8 +32742,23 @@
 			key: 'getSearchedBooksResult',
 			value: function getSearchedBooksResult() {
 				var thisProps = this.props;
-				var path = "/books/search/?term=" + this.state.BookNameValue + "~" + this.state.AuthorValue + "~" + this.state.OwnerValue + "~" + this.state.PublishValue + "~" + this.state.PublishYearValue;
-				//var path="/books/getAll/";
+				var findMy = this.refs.shared.checked;
+				var findPub = this.refs.my.checked;
+				var path = "";
+				if (findMy) {
+					if (findPub) {
+						path = "/books/search/?term=";
+					} else {
+						path = "/books/searchInMyLibrary/?term=";
+					}
+				} else {
+					if (findPub) {
+						path = "/books/searchInPublicLibrary/?term=";
+					} else {
+						path = "/books/search/?term=";
+					}
+				}
+				path = path + this.state.BookNameValue + "~" + this.state.AuthorValue + "~" + this.state.OwnerValue + "~" + this.state.PublishValue + "~" + this.state.PublishYearValue;
 				restService.get(path).then(function (fetchBooks) {
 					thisProps.getBooks(fetchBooks, "SearchResults");
 				});
@@ -32768,10 +32783,10 @@
 					_react2.default.createElement('input', { placeholder: '\u05D1\u05E2\u05DC\u05D9\u05DD', id: 'searchOwnerName', type: 'text', onChange: this.updateInputOwnerValue.bind(this) }),
 					_react2.default.createElement('input', { placeholder: '\u05E9\u05DD \u05D4\u05D5\u05E6\u05D0\u05D4', id: 'searchPublishValue', type: 'text', onChange: this.updateInputPublishValue.bind(this) }),
 					_react2.default.createElement('input', { placeholder: '\u05E9\u05E0\u05EA \u05D4\u05D5\u05E6\u05D0\u05D4', id: 'searchPublishYear', type: 'number', min: '1800', max: '2017', onChange: this.updateInputPublishYearValue.bind(this) }),
-					_react2.default.createElement('input', { type: 'checkbox', name: 'search-filter', value: 'my' }),
+					_react2.default.createElement('input', { ref: 'my', type: 'checkbox', name: 'search-filter', value: 'my' }),
 					' My library',
 					_react2.default.createElement('br', null),
-					_react2.default.createElement('input', { type: 'checkbox', name: 'search-filter', value: 'shared', checked: true }),
+					_react2.default.createElement('input', { ref: 'shared', type: 'checkbox', name: 'search-filter', value: 'shared' }),
 					' Shared library',
 					_react2.default.createElement('br', null)
 				);
@@ -33203,6 +33218,10 @@
 	
 	var _myLentBooksGrid2 = _interopRequireDefault(_myLentBooksGrid);
 	
+	var _searchBooksResult = __webpack_require__(195);
+	
+	var _searchBooksResult2 = _interopRequireDefault(_searchBooksResult);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33248,6 +33267,8 @@
 						grid = _react2.default.createElement(_myBorrowedBooksGrid2.default, { data: this.props.data });break;
 					case "MyLentBooksGrid":
 						grid = _react2.default.createElement(_myLentBooksGrid2.default, { data: this.props.data });break;
+					case "SearchResults":
+						grid = _react2.default.createElement(_searchBooksResult2.default, { data: this.props.data });break;
 				}
 				return _react2.default.createElement(
 					'div',
@@ -33843,6 +33864,160 @@
 	exports.default = MyLentBooksGrid;
 	
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "myLentBooksGrid.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// var Enumerable = require("linqjs");
+	
+	var SearchBooksResult = function (_React$Component) {
+		_inherits(SearchBooksResult, _React$Component);
+	
+		function SearchBooksResult(props) {
+			_classCallCheck(this, SearchBooksResult);
+	
+			var _this = _possibleConstructorReturn(this, (SearchBooksResult.__proto__ || Object.getPrototypeOf(SearchBooksResult)).call(this, props));
+	
+			_this.state = {
+				'displayModeSubGrids': [],
+				'data': []
+			};
+			return _this;
+		}
+	
+		_createClass(SearchBooksResult, [{
+			key: 'setExpandClassTo',
+			value: function setExpandClassTo(ind, evt) {
+				var displayModeSubGrids = this.state.displayModeSubGrids;
+				if (displayModeSubGrids[ind]) {
+					evt.target.setAttribute('class', 'toggleSubGrid');
+				} else {
+					evt.target.setAttribute('class', 'expandSubGrid');
+				}
+				displayModeSubGrids[ind] = !displayModeSubGrids[ind];
+				this.setState({
+					displayModeSubGrids: displayModeSubGrids
+				});
+			}
+		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var books = _react2.default.createElement('div', null);
+				var data1 = [[{ name: "dd", ownerName: "gg" }, { name: "dd", ownerName: "gg2" }, { name: "dd", ownerName: "gg3" }], [{ name: "d2d", ownerName: "gg" }, { name: "d2d", ownerName: "gg2" }], [{ name: "d3d", ownerName: "gg3" }, { name: "d3d", ownerName: "gg3" }]];
+				for (var i = data1.length - 1; i >= 0; i--) {
+					data1[i].ttl = data1[i][0].name;
+				}
+				for (var ii = 0; ii < data1.length; ii++) {
+					var arr = [];
+					for (var j = 0; j < data1[ii].length; j++) {
+						arr.push(_react2.default.createElement(
+							'tr',
+							null,
+							_react2.default.createElement(
+								'td',
+								null,
+								data1[ii][j].name
+							),
+							_react2.default.createElement(
+								'td',
+								null,
+								data1[ii][j].ownerName
+							)
+						));
+					}
+					var ind = ii;
+					this.state.data.push(_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'div',
+							{ 'class': 'toggleSubGrid', onClick: this.setExpandClassTo.bind(this, ind) },
+							data1[ii].ttl
+						),
+						_react2.default.createElement(
+							'tr',
+							null,
+							_react2.default.createElement(
+								'th',
+								null,
+								'Book Name'
+							),
+							_react2.default.createElement(
+								'th',
+								null,
+								'Owner Name'
+							)
+						),
+						arr
+					));
+					this.state.displayModeSubGrids.push(false);
+				}
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+	
+				//  var data = [];
+				// for(var book in data1) {
+				//      data.push(
+				//      // <div onClick={()=>this.setExpandClass('/books/getAll/'+this.props.userId,"MyBooks")}>{book.ttl}</div> 
+				//      <tr > 
+				//      	<td>{book}</td> 
+				//      	<td>{book}</td> 
+				//   </tr>);
+				//    }
+				// var data = [];
+				// var f=this.props.data;
+				// var ff=Enumerable.from(f).select('name');
+				//    for(var book in this.props.data) {
+				//      data.push(
+				//      <tr> 
+				//      	<td>{this.props.data[book].name}</td> 
+				//      	<td>{this.props.data[book].ownerName}</td> 
+				//      	<td>{this.props.data[book].author}</td> 
+				//      	<td>{this.props.data[book].isloan}</td> 
+				//   </tr>);
+				//    }
+				var books = _react2.default.createElement('div', null);
+				if (this.state.data) if (this.state.data.length != 0) books = _react2.default.createElement(
+					'div',
+					{ className: 'books-grid' },
+					this.state.data
+				);
+				console.log(books);
+				return books;
+			}
+		}]);
+	
+		return SearchBooksResult;
+	}(_react2.default.Component);
+	
+	exports.default = SearchBooksResult;
+	
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\projectGithub\\shareMyBooks\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "searchBooksResult.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);

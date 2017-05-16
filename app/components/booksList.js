@@ -4,6 +4,8 @@ import NewBookPopup from './newBookPopup';
 import MyBooks from './myBooks';
 import MyBorrowedBooksGrid from './myBorrowedBooksGrid';
 import MyLentBooksGrid from './myLentBooksGrid';
+import SearchBooksResult from './searchBooksResult';
+
 
 
 class BooksList extends React.Component {
@@ -31,6 +33,7 @@ class BooksList extends React.Component {
 			case "MyBooks":grid=<MyBooks data={this.props.data}/>;break;
 			case "MyBorrowedBooksGrid":grid=<MyBorrowedBooksGrid data={this.props.data}/>;break;
 			case "MyLentBooksGrid":grid=<MyLentBooksGrid data={this.props.data}/>;break;
+			case "SearchResults":grid=<SearchBooksResult data={this.props.data}/>;break;
 		}
 		return (
 			<div className="books-list" >

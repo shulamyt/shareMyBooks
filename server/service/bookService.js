@@ -39,9 +39,9 @@ BookService.prototype.search=function(term){
 	return promise;
 };
 
-BookService.prototype.searchInPublicLibrary=function(term){
+BookService.prototype.searchInPublicLibrary=function(term,userId){
 	var promise =  new Promise(function(resolve, reject) {
-			bookPersistence.searchInPublicLibrary(term).then(function(books){
+			bookPersistence.searchInPublicLibrary(term,userId).then(function(books){
 				resolve(books);
 			});
 		});

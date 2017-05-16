@@ -10,27 +10,30 @@ module.exports = function (server) {
         });
 
     });
-    
+
     //search for a book in pulic & in personal library
-    server.get('/books/search', function (req, res) {
-        console.log(req.query.term);
+    server.get('/books/search',function(req,res){
         var g=req.query.term.split('~');
         bookService.search(g).then(function(books){
             console.log(books);
-            res.status(201).json(book);
+            res.status(201).json(books);
         });
+
     });
 
     //search for a book in personal library
     server.get('/books/searchInMyLibrary', function (req, res) {
         bookService.searchInMyLibrary(req.query.term,req.query.userId).then(function(books){
+            var g=req.query.term.split('~');
             console.log(books);
             res.status(201).json(book);
         });
     });
+    
     //search for a book in pulic library
     server.get('/books/searchInPublicLibrary', function (req, res) {
         bookService.searchInPublicLibrary(req.query.term,req.query.userId).then(function(books){
+            var g=req.query.term.split('~');
             console.log(books);
             res.status(201).json(book);
         });

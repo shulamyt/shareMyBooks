@@ -14,7 +14,7 @@ var CNT3_SRCH="%' and b.publishingHouse like '%";
 var CNT4_SRCH="%' "
 var CNT5_SRCH="and b.publishingYear = ";
 var CNT6_SRCH_PERSONAL=" and user_id = ";
-var CNT6_SRCH_PUBLIC="and user_id <> ";
+var CNT6_SRCH_PUBLIC=" and user_id <> ";
 var ADD_BOOK="insert into [dbo].[Book] ([name],[author],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
 var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
@@ -95,7 +95,7 @@ BookPersistence.prototype.search=function(term){
 		}
 		console.log("success to connect");
 		var g=SRCH_BOOK+term[0]+CNT1_SRCH+term[1]+CNT2_SRCH+term[2]+CNT3_SRCH+term[3]+CNT4_SRCH+term[4];
-		if (term[5]) {	
+		if (term[5] && term[5]!=undefined) {	
 			g=g+CNT5_SRCH+term[5];
 		}			
 		console.log(g);
@@ -114,7 +114,7 @@ BookPersistence.prototype.search=function(term){
 	});
 	return promise;
 }
-BookPersistence.prototype.searchInPublicLibrary=function(term){
+BookPersistence.prototype.searchInPublicLibrary=function(term, userId){
   var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);
 		var req = new sql.Request(conn);
@@ -124,7 +124,12 @@ BookPersistence.prototype.searchInPublicLibrary=function(term){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(SRCH_BOOK+term+CNT_SRCH+term+CNT2_SRCH,
+			var q = SRCH_BOOK+term[0]+CNT1_SRCH+term[1]+CNT2_SRCH+term[2]+CNT3_SRCH+term[3]+CNT4_SRCH+term[4];
+			if (term[5]) {	
+				q =q +CNT5_SRCH+term[5];
+			}
+			q = q + CNT6_SRCH_PUBLIC + userId;
+			req.query(q,
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
@@ -149,7 +154,12 @@ BookPersistence.prototype.searchInMyLibrary=function(term,userId){
 				return null;
 			}
 			console.log("success to connect");
-			req.query(SRCH_BOOK+term+CNT_SRCH+term+CNT2_SRCH_PERSONAL+userId,
+			var q = SRCH_BOOK+term[0]+CNT1_SRCH+term[1]+CNT2_SRCH+term[2]+CNT3_SRCH+term[3]+CNT4_SRCH+term[4];
+			if (term[5]) {	
+				q =q +CNT5_SRCH+term[5];
+			}
+			q = q + CNT6_SRCH_PERSONAL + userId;
+			req.query(q,
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
