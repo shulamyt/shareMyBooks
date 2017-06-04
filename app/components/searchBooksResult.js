@@ -1,5 +1,6 @@
 import React from 'react';
 // var Enumerable = require("linqjs");
+//import linq from 'linq';
 
 class SearchBooksResult extends React.Component {
 	constructor(props){
@@ -23,7 +24,7 @@ class SearchBooksResult extends React.Component {
 	    });
   	}
   	componentWillMount(){
-  		var books=<div></div>;
+		var books=<div></div>;
 		var data1 = [[{name:"dd",ownerName:"gg"},{name:"dd",ownerName:"gg2"},{name:"dd",ownerName:"gg3"}],[{name:"d2d",ownerName:"gg"},{name:"d2d",ownerName:"gg2"}],[{name:"d3d",ownerName:"gg3"},{name:"d3d",ownerName:"gg3"}]];
 		for (var i = data1.length - 1; i >= 0; i--) {
 			data1[i].ttl=data1[i][0].name;
@@ -49,7 +50,6 @@ class SearchBooksResult extends React.Component {
 		  	);
 		  	this.state.displayModeSubGrids.push(false);
 		}
-		
   	}
 	render() {
 		

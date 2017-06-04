@@ -9,10 +9,10 @@ var CONFIRM="UPDATE [dbo].[loan] SET loan_date=GETDATE(),for_how_long=";
 var CONFIRM1=",accepted=1 WHERE id=";
 var RETURN_BOOK="UPDATE [dbo].[loan] SET return_date=GETDATE() WHERE id=";
 var GET_LOAN="select * from [dbo].[Loan] l where l.id="
-var GET_WAITING="select u.f_name, u.l_name, u.email,b.name from [dbo].[loan] l join [dbo].[User] u on l.id_borrower=u.id join [dbo].[Book] b on l.id_book=b.id where l.accepted=0 AND l.id_lender=";
-var GET_LATING="select b.name,l.loan_date,l.for_how_long from [dbo].[loan] l join [dbo].[Book] b on b.id=l.id_book where l.return_date is null and DATEDIFF(day,  l.loan_date,GETDATE()) > l.for_how_long and l.id_borrower="
-var GET_BORROWED="select b.id, b.name, u.f_name+' '+u.l_name ownerName, u.email, u.phone, l.loan_date,l.for_how_long from [dbo].[Loan] l join [dbo].[Book] b on l.id_book = b.id join [dbo].[User] u on l.id_lender = u.id where l.return_date IS NULL and l.accepted='true'and  l.id_borrower="
-var GET_LENTֹ_BOOKS="select b.id, b.name, u.f_name+' '+u.l_name borrowerName, u.email, u.phone, l.loan_date,l.for_how_long from [dbo].[Loan] l join [dbo].[Book] b on l.id_book = b.id join [dbo].[User] u on l.id_borrower = u.id where l.return_date IS NULL and l.accepted='true'and  l.id_lender="
+var GET_WAITING="select CONCAT(u.f_name,' ',u.l_name) borrowerName,u.id borrowerId, u.email ,b.name,b.publishingHouse,b.publishingYear from [dbo].[loan] l join [dbo].[User] u on l.id_borrower=u.id join [dbo].[Book] b on l.id_book=b.id where l.accepted=0 OR l.accepted is NULL AND l.id_lender= "
+var GET_LATING="select CONCAT(u.f_name,' ',u.l_name) borrowerName,u.id borrowerId, b.name, DATEDIFF(day,l.loan_date,GETDATE()) NumLateDays, b.publishingHouse,b.publishingYear from [dbo].[loan] l join [dbo].[User] u on l.id_borrower=u.id join [dbo].[Book] b on b.id=l.id_book where l.return_date is null and DATEDIFF(day,l.loan_date,GETDATE()) > l.for_how_long and l.id_lender= "
+var GET_BORROWED="select b.id, b.name, u.f_name+' '+u.l_name ownerName, u.email, u.phone, l.loan_date,l.for_how_long from [dbo].[Loan] l join [dbo].[Book] b on l.id_book = b.id join [dbo].[User] u on l.id_lender = u.id where l.return_date IS NULL and l.accepted='true'and  l.id_borrower= "
+var GET_LENTֹ_BOOKS="select b.id, b.name, u.f_name+' '+u.l_name borrowerName, u.email, u.phone, l.loan_date,l.for_how_long from [dbo].[Loan] l join [dbo].[Book] b on l.id_book = b.id join [dbo].[User] u on l.id_borrower = u.id where l.return_date IS NULL and l.accepted='true'and  l.id_lender= "
 
 var dbConfig={
 	server:"localhost\\mssqlserver",
@@ -127,6 +127,7 @@ LoanPersistence.prototype.getallWaiting = function(id){
 				return null;
 			}
 			console.log("success to connect");
+			console.log(GET_WAITING+id);
 			req.query(GET_WAITING+id,
 				function(err,recordset){
 					if(err){
@@ -220,8 +221,6 @@ LoanPersistence.prototype.getAllLating = function(id){
 	});
 	return promise;
 };
-
-
 
 var loanPersistence = new LoanPersistence();
 module.exports = loanPersistence;

@@ -7,3 +7,134 @@
 .toggleSubGrid{
 	display: none;
 }
+html,body {
+  height: 100%;
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  background: lightblue;
+  //height: 60px;
+  flex: 0 0 60px;
+  color: black;
+  justify-content: space-around;
+}
+
+.user-details {
+  flex: 0 0 400px;
+  align-self: center;
+  margin-left: 20px;
+  text-align: right;
+  display: flex;
+}
+
+.user-details .logout {
+  flex: 0 0 40px;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.user-details .content {
+  flex: 1;
+  align-self: center;
+}
+
+.search-container {
+  flex: 0 0 520px;
+  display: flex;
+}
+
+.search {
+  flex: 0 0 400px;
+  align-self: center;
+}
+
+.checkboxes {
+  flex: 0 0 120px;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.logo {
+  flex: 0 0 400px;
+  align-self: center;
+  margin-right: 20px;
+  height: 40px;
+}
+
+.body {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.menu-section {
+  flex: 0 0 300px;
+  border-right: 1px solid;
+}
+
+.nav li a {
+  border-radius: 0;
+}
+
+.book {
+  margin: 16px;
+  height: 200px;
+  display: flex;
+  flex: 0 0 300px;
+}
+
+.book img {
+  flex: 0 0 120px;
+  width: 120px;
+  margin: 16px;
+}
+
+.book h3 {
+  margin: 0;
+}
+
+.list-section {
+  flex: 1;
+  display: flex;
+  flex-warp: wrap;
+  position: relative;
+}
+
+.btn.add {
+  border-radius: 50%;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+}
+
+.alerts-section {
+  flex: 0 0 300px;
+  border-left: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.alerts {
+  border: 1px solid;
+  margin: 16px;
+  flex: 1;
+}
+
+.alerts li {
+  border-radius: 0 !important;
+}
+
+.alerts i, .alerts li > span {
+  float: right;
+  vertical-align: middle;
+}

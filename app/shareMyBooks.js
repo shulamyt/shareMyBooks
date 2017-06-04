@@ -6,9 +6,11 @@ import FixedArea from './components/fixedArea.js';
 import AlertsArea from './components/alertsArea.js';
 import Menu from './components/menu.js';
 import BooksList from './components/booksList.js';
+import AlertWait from './components/alertWait.js'
+// import Charts from './components/charts.js';
+// import Pie from './components/pie.js';
 
 class ShareMyBooks extends React.Component{
-
 	constructor(props){
 		super(props);
 		this.state = {
@@ -17,7 +19,6 @@ class ShareMyBooks extends React.Component{
 			'showLoging': true
 		}
 	}
-
 	onUserChange(user){
 		this.setState({
 			'user': user,
@@ -41,8 +42,9 @@ class ShareMyBooks extends React.Component{
 				<FixedArea getBooks={this.getBooks.bind(this)}/> 
 				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
 				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
-				<AlertsArea />
-			</div>;
+				<AlertsArea userId={this.state.user.id}/>
+				<AlertWait />
+				</div>;
 		}
 		return(
 			loginComponent
