@@ -22395,17 +22395,28 @@
 						"email": email,
 						"password": password
 					};
-					restService.post('/users/login', user).then(function (fetchUser) {
-						console.log("Im here");
-						//result = fetchUser;
-						console.log(fetchUser);
-						if (!fetchUser) {
-							$("#noUser").text("one detail or more is incorrect");
-						} else {
-							thisProps.onUserChange(fetchUser);
-						}
-						console.log("firstRender");
-					});
+					//for Rachelli
+					var u = { password: '5',
+						f_name: 'tt',
+						l_name: 'yy',
+						email: 'y@y.y',
+						phone: null,
+						address: null,
+						id: 13 };
+					thisProps.onUserChange(u);
+					//TODO:
+					/*restService.post('/users/login',user).then(function(fetchUser){
+	    	console.log("Im here");
+	    	//result = fetchUser;
+	    	console.log(fetchUser);
+	    	if(!fetchUser){
+	    		$("#noUser").text("one detail or more is incorrect");
+	    	}else{
+	    		thisProps.onUserChange(fetchUser);
+	    	}
+	    	console.log("firstRender");	
+	    	
+	    });*/
 				}
 			}
 		}, {
@@ -41453,18 +41464,38 @@
 					'showPopup': true
 				});
 			}
+			//for Rachelli
+	
 		}, {
 			key: 'render',
 			value: function render() {
 				var _this2 = this;
 	
+				var dd = [{ id: 24,
+					name: 'g',
+					author: 'g',
+					shelf: '8',
+					clmn: '6',
+					isloan: true }, { id: 12343,
+					name: 'dthd',
+					author: 'et',
+					shelf: null,
+					clmn: null,
+					isloan: null }, { id: 12344,
+					name: 'k',
+					author: 'k',
+					shelf: '2',
+					clmn: '6',
+					isloan: false }];
 				var popup;
 				var grid;
 				console.log(this.props.data);
 				if (this.state.showPopup) popup = _react2.default.createElement(_newBookPopup2.default, null);else popup = _react2.default.createElement('div', null);
 				switch (this.props.whichGrid) {
+					//for Rachelli:
 					case "MyBooks":
-						grid = _react2.default.createElement(_myBooks2.default, { data: this.props.data });break;
+						grid = _react2.default.createElement(_myBooks2.default, { data: dd });break;
+					//TODO: case "MyBooks":grid=<MyBooks data={dd}/>;break;
 					case "MyBorrowedBooksGrid":
 						grid = _react2.default.createElement(_myBorrowedBooksGrid2.default, { data: this.props.data });break;
 					case "MyLentBooksGrid":
@@ -51170,8 +51201,8 @@
 		_createClass(Immg, [{
 			key: 'handleClick',
 			value: function handleClick(e) {
-				e.preventDefault();
-				this.props.rowData.id;
+				//e.preventDefault();
+				alert("id book" + this.props.rowData.id);
 			}
 		}, {
 			key: 'render',

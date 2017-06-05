@@ -21,7 +21,26 @@ class BooksList extends React.Component {
 		});
 
 	}
+	//for Rachelli
 	render() {
+		var dd=[ { id: 24,
+    name: 'g',
+    author: 'g',
+    shelf: '8',
+    clmn: '6',
+    isloan: true },
+  { id: 12343,
+    name: 'dthd',
+    author: 'et',
+    shelf: null,
+    clmn: null,
+    isloan: null },
+  { id: 12344,
+    name: 'k',
+    author: 'k',
+    shelf: '2',
+    clmn: '6',
+    isloan: false } ]
 		var popup;
 		var grid;
 		console.log(this.props.data);
@@ -30,7 +49,9 @@ class BooksList extends React.Component {
 		else
 			popup=<div></div>;
 		switch(this.props.whichGrid){
-			case "MyBooks":grid=<MyBooks data={this.props.data}/>;break;
+			//for Rachelli:
+			case "MyBooks":grid=<MyBooks data={dd}/>;break;
+			//TODO: case "MyBooks":grid=<MyBooks data={dd}/>;break;
 			case "MyBorrowedBooksGrid":grid=<MyBorrowedBooksGrid data={this.props.data}/>;break;
 			case "MyLentBooksGrid":grid=<MyLentBooksGrid data={this.props.data}/>;break;
 			case "SearchResults":grid=<SearchBooksResult data={this.props.data}/>;break;
