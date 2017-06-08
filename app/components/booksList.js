@@ -41,7 +41,7 @@ class BooksList extends React.Component {
     shelf: '2',
     clmn: '6',
     isloan: false } ]
-		var popup;
+		var popup=-1;
 		var grid;
 		console.log(this.props.data);
 		if (this.state.showPopup)

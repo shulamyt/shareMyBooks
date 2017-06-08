@@ -16,6 +16,10 @@ BookService.prototype.addBook=function(book){
 	bookPersistence.addBook(book);
 };
 
+BookService.prototype.updateLike=function(book){
+	bookPersistence.updateLike(book);
+};
+
 BookService.prototype.deleteBook=function(id){
 	bookPersistence.deleteBook(id);
 };
@@ -23,7 +27,16 @@ BookService.prototype.deleteBook=function(id){
 BookService.prototype.getAllBooks=function(userId){
 	var promise =  new Promise(function(resolve, reject) {
 			bookPersistence.getAllBooks(userId).then(function(books){
-				console.log("in BookService"+books.length)
+				resolve(books);
+			});
+		});
+	return promise;
+};
+
+BookService.prototype.getLikes=function(){
+	console.log("teyrsrthayceyrdty");
+	var promise =  new Promise(function(resolve, reject) {
+			bookPersistence.getLikes().then(function(books){
 				resolve(books);
 			});
 		});

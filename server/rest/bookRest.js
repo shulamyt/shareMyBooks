@@ -39,12 +39,27 @@ module.exports = function (server) {
         });
     });
 
+     //get Likes
+     server.get('/books/Likes',function(req,res){
+        bookService.getLikes().then(function(books){
+            console.log(books);
+            res.status(201).json(books);
+        });
+
+    });
+
     //get book by book id
     server.get('/books/:id', function (req, res) {
         bookService.getBook(req.params.id).then(function(book){
             console.log(book);
             res.status(201).json(book);
         });
+    });
+
+    //update Like
+    server.post('/books/Like', function (req, res) {
+        console.log(req.body);
+        bookService.updateLike(req.body.book);
     });
 
     //add book

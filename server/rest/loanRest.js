@@ -19,27 +19,22 @@ module.exports = function (server) {
 
     //get list of books that I borrowed
     server.get('/loans/borrowed/:idUser',function(req,res){
-
         loanService.getBorrowed(req.params.idUser).then(function(loans){
             console.log(loans);
             res.status(201).json(loans);
         });
-
     });
 
     //get list of books that I lent
     server.get('/loans/lent/:idUser',function(req,res){
-
         loanService.getUsersLentBooks(req.params.idUser).then(function(loans){
             console.log(loans);
             res.status(201).json(loans);
         });
-
     });
 
     //get list of books that are waiting to confirm
     server.get('/loans/waiting/:idUser',function(req,res){
-
         loanService.getallWaiting(req.params.idUser).then(function(loans){
             console.log(loans);
             res.status(201).json(loans);

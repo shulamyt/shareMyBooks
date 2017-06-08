@@ -6,17 +6,22 @@ import FixedArea from './components/fixedArea.js';
 import AlertsArea from './components/alertsArea.js';
 import Menu from './components/menu.js';
 import BooksList from './components/booksList.js';
-import AlertWait from './components/alertWait.js'
-// import Charts from './components/charts.js';
-// import Pie from './components/pie.js';
+import AlertWait from './components/alertWait.js';
+import ChartistGraph from 'react-chartist';
+//
+import * as restService from './service/restService';
+//import Ch2 from './components/ch2.js';
+//import Chart from './components/charts.js';
+import Pie from './components/pie.js';
 
 class ShareMyBooks extends React.Component{
+
 	constructor(props){
 		super(props);
 		this.state = {
 			'user': { },
 			'myBooks':[ ],
-			'showLoging': true
+			'showLoging': true,
 		}
 	}
 	onUserChange(user){
@@ -43,11 +48,14 @@ class ShareMyBooks extends React.Component{
 				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
 				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
 				<AlertsArea userId={this.state.user.id}/>
-				<AlertWait />
-				</div>;
+				<div id="chart-container"></div>
+				<b>{this.state.popularCurrentTitle}</b>
+				<Pie/>
+			</div>;
 		}
 		return(
 			loginComponent
+
 		);
 	}
 	
