@@ -1,0 +1,46 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    
+}
+.wrapper::after {
+  content: "";
+  background-image: url('./static/background.jpg') !important;
+  background-size: cover;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+.page{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    flex: 5;
+}
+.page > .menu{
+    display: flex;
+    flex-direction: column;
+    padding:2rem;
+}
+.page > .books-list{
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+    padding: 2rem;
+    align-items: center;
+    
+}
+.page > .alerts{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin: 2rem;
+    border: transparent !important;
+}
+

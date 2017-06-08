@@ -9,6 +9,8 @@ import BooksList from './components/booksList.js';
 import AlertWait from './components/alertWait.js'
 // import Charts from './components/charts.js';
 // import Pie from './components/pie.js';
+import styles from './shareMyBook.css';
+import CssModules from 'react-css-modules';
 
 class ShareMyBooks extends React.Component{
 	constructor(props){
@@ -38,12 +40,16 @@ class ShareMyBooks extends React.Component{
 		if(this.state.showLoging === true){
 			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this) }/> <NewUserPopup /></div>;
 		}else{
-			loginComponent=<div>
-				<FixedArea getBooks={this.getBooks.bind(this)}/> 
-				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
-				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
-				<AlertsArea userId={this.state.user.id}/>
-				<AlertWait />
+			loginComponent=<div className="wrapper">
+					<FixedArea getBooks={this.getBooks.bind(this)}/> 
+					<div className="page">
+						<Menu className="menu" userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
+						<BooksList className="booklist" data={this.state.Books} whichGrid={this.state.whichGrid}/>
+						<div className="alerts">
+							<AlertsArea className="alert-area" userId={this.state.user.id}/>
+							<AlertWait className="alert-wait" />
+						</div>
+					</div>
 				</div>;
 		}
 		return(
@@ -52,4 +58,4 @@ class ShareMyBooks extends React.Component{
 	}
 	
 }
-export default ShareMyBooks;
+export default CssModules(ShareMyBooks, styles);
