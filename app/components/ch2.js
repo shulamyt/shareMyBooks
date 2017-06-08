@@ -1,28 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import fusioncharts from 'fusioncharts';
+import 'fusioncharts/fusioncharts.charts.js';
+import FusionCharts from 'fusioncharts';
+
 // Load the charts module
-import charts from 'fusioncharts/fusioncharts.charts';
+//import charts from 'fusioncharts/fusioncharts.charts';
 import ReactFC from 'react-fusioncharts';
 
-// Pass fusioncharts as a dependency of charts
-// charts(FusionCharts)
+// ReactDOM.render(
+//     let g=this.props.dd;
+//     <ReactFC {...g} />,
+//     document.getElementById('sales-chart-container')
+// );
 
-// var chartConfigs = {
-//     type: ...,
-//     renderAt: ...,
-//     className: ..., // ReactJS attribute-name for DOM classes
-//     dataFormat: ...,
-//     dataSource: ...
-// };
-
-FusionCharts.ready(function () {
-    var myDataSource = {
+class Ch2 extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            'showPopup': false
+        }
+    }
+    render(){
+        var g={
+    width: "600",
+    height: "400",
+    type: "column2d",
+    dataSource: {
         chart: {
             caption: "Harry's SuperMart",
             subCaption: "Top 5 stores in last month by revenue",
             numberPrefix: "$",
-            theme: "ocean"
+            theme: "fint"
         },
         data: [{
             label: "Bakersfield Central",
@@ -34,24 +42,16 @@ FusionCharts.ready(function () {
             label: "Los Angeles Topanga",
             value: "590000"
         }, {
+            label: "Compton-Rancho Dom",
+            value: "520000"
+        }, {
             label: "Daly City Serramonte",
             value: "330000"
         }]
-    };
-
-    var revenueChartConfigs = {
-        id: "revenue-chart",
-        renderAt: "revenue-chart-container",
-        type: "column2d",
-        width: 500,
-        height: 400,
-        dataFormat: "json",
-        dataSource: myDataSource
-    };
-
-    ReactDOM.render( <ReactFC {...revenueChartConfigs
     }
-    />,
-		document.getElementById('chart-container')
-	);
-});
+}
+return(
+        <ReactFC {...g} />)
+    }
+}
+export default Ch2;
