@@ -1,9 +1,9 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    margin-bottom: 5rem;
-    padding: 2rem;
-    
+    margin-bottom: 0rem !important;
+    padding: 2rem;  
+    width: 100% !important;  
 }
 .wrapper::after {
   content: "";
@@ -43,4 +43,24 @@
     margin: 2rem;
     border: transparent !important;
 }
-
+.wrapper-login{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    padding: 2rem; 
+    align-items: center;
+    justify-content: center; 
+    width: 100%;  
+}
+.wrapper-login::after {
+  content: "";
+  background-image: url('./static/background.jpg') !important;
+  background-size: cover;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}

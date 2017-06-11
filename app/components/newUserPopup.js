@@ -2,7 +2,8 @@ import React from 'react';
 import SkyLight from 'react-skylight';
 var $ = require("jquery");
 import * as restService from './../service/restService';
-
+import styles from './newUserPopup.css';
+import CssModules from 'react-css-modules';
 
 class NewUserPopup extends React.Component {
   constructor(props){
@@ -23,11 +24,11 @@ class NewUserPopup extends React.Component {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
     if(password.trim()=="" || f_name.trim()=="" || l_name.trim()==""  || address.trim()=="" || phone.trim()=="" || email.trim()==""){
-        $("#spnErr").text("You must fill in required fields!!! :(");
+        $("#spnError").text("You must fill in required fields!!! :(");
         err=true;
     }
     else{
-      $("#spnErr").text("");
+      $("#spnError").text("");
     }
     if(phone!="" && !filter.test(phone)){
         $("#spnphn").text("Valid format only!!!");
@@ -64,19 +65,21 @@ class NewUserPopup extends React.Component {
     return (
       <div>
         <section>
-          <button onClick={() => this.refs.simpleDialog.show()}>new user</button>
+          <button className='button-n-u' onClick={() => this.refs.simpleDialog.show()}>new user</button>
         </section>
-        <SkyLight hideOnOverlayClicked ref="simpleDialog" title="Welcome to ShareMyBooks">
-          <h3>Hello, thank you for joining us!</h3>
-          <h4>please enter your details:</h4>
-          *password: <input type="text" id="pswrd"/><br/><br/>
-          *First name: <input type="text" id="f_n"/><br/><br/>
-          *Last name:  <input type="text" id="l_n" /><br/><br/>
-          Email:      <input type="text" id="eml"/><span id="spneml"></span><br/><br/>
-          *phone:    <input type="text" id="phn"/><span id="spnphn"></span><br/><br/>
-          *Address:    <input type="text" id="add"/><br/><br/>
-           <span id="spnErr"></span><br/><br/>
-           <button onClick={()=>this.adduser()}>add</button>
+        <SkyLight hideOnOverlayClicked ref="simpleDialog" title="">
+          <h3 className='h3'>Hello, thank you for joining us!</h3>
+          <h4 className='h4'>please enter your details:</h4>
+          <div className='require'><input placeholder="Password" className='input' type="text" id="pswrd"/>*</div>
+          <div className='require'><input placeholder="Firdt name" className='input' type="text" id="f_n"/>*</div>
+          <div className='require'><input placeholder="Last name" className='input' type="text" id="l_n" />*</div>
+          <div className='require'><input placeholder="Email" className='input' type="text" id="eml"/>*</div>
+          <span id="spneml"></span>
+          <div className='require'><input placeholder="Phone" className='input' type="text" id="phn"/>*</div>
+          <span id="spnphn"></span>
+          <div className='require'><input placeholder="Address" className='input' type="text" id="add"/>*</div>
+          <span id="spnError"></span>
+          <button className="button" onClick={()=>this.adduser()} >+</button>
         </SkyLight>
       </div>
     )
@@ -85,4 +88,4 @@ class NewUserPopup extends React.Component {
 
 NewUserPopup.displayName = 'NewUserPopup';
 
-export default NewUserPopup;
+export default CssModules(NewUserPopup, styles);

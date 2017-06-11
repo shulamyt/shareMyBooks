@@ -1,0 +1,52 @@
+.skylight-dialog{
+	height:60% !important;
+    border-radius: 6rem !important;
+    background-color: lightgray!important;
+    padding: 4rem !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    color: red !important;
+}
+.button{
+	height: 5rem;
+    width: 5rem;
+    border-radius: 3rem;
+    background: #5050ff;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.input{
+	background: #8ec6ff;
+    border: 0.11rem #489ff7 solid;
+    width: 30rem;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: darkblue;
+    margin: 0.5rem;
+}
+.h3{
+	color: darkblue !important;
+    font-style: italic !important;
+    font-family: cursive !important;
+}
+.h4{
+	color: darkblue !important;
+    font-style: italic !important;
+    font-family: cursive !important;
+}
+.button-n-u{
+	border: none;
+    background: transparent;
+    font-size: 3rem;
+    font-style: italic;
+    color: blue;
+}
+.require{
+	display: flex;
+	color: red;
+	font-size: 3rem;
+}
