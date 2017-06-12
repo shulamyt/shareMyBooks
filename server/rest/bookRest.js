@@ -79,9 +79,6 @@ module.exports = function (server) {
             res.status(201).json(book);
         
         });
-        console.log("ubook "+req.body.book);
-        console.log("ubook "+req.body);
-        console.log("ubook "+req.body.user);
         bookService.updateBook(req.body.user);
     });
 };

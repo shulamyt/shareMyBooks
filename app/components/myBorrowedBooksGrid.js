@@ -36,35 +36,35 @@ class MyBorrowedBooksGrid extends React.Component {
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "ימי השאלה",
-	    "sortable": false
+	    "sortable": true
 	  	},
 	  	{"columnName": "loan_date",
 	    "order":  4,
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "תאריך",
-	    "sortable": false
+	    "sortable": true
 	  	},
 	  	{"columnName": "phone",
 	    "order":  4,
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "טלפון",
-	    "sortable": false
+	    "sortable": true
 	  	},
 	  	{"columnName": "email",
 	    "order":  4,
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "דואל",
-	    "sortable": false
+	    "sortable": true
 	  	},
 	  	{"columnName": "ownerName",
 	    "order":  4,
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "בעלים",
-	    "sortable": false
+	    "sortable": true
 	  	},
 		{
 	    "columnName": "name",
@@ -72,7 +72,7 @@ class MyBorrowedBooksGrid extends React.Component {
 	    "locked": false,
 	    "visible": true,
 	    "displayName": "שם ספר",
-	    "sortable": false
+	    "sortable": true
 	  	}]
 		if (this.props.data) {
 			return (

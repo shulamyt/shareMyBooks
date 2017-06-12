@@ -21,6 +21,11 @@ module.exports = function (server) {
     server.get('/loans/borrowed/:idUser',function(req,res){
         loanService.getBorrowed(req.params.idUser).then(function(loans){
             console.log(loans);
+            for (var i = 0; i< book.length ; i++) {
+                var dat = new Date(book[i].loan_date.valueOf());
+                book[i].loan_date= dat.toDateString().substring(1,10);
+            }
+            console.log("ggggggg");
             res.status(201).json(loans);
         });
     });
