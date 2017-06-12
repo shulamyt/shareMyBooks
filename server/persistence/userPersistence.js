@@ -94,6 +94,7 @@ UserPersistence.prototype.getUser = function(id){
 	});
 	return promise;
 };
+
 UserPersistence.prototype.login = function(password,email){
 	var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);

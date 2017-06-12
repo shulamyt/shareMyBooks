@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Griddle from 'griddle-react'; 
 
 class MyBorrowedBooksGrid extends React.Component {
 	getDateToReturn(loanDate,numDays){
@@ -6,45 +8,84 @@ class MyBorrowedBooksGrid extends React.Component {
 	  	dat.setDate(dat.getDate() + numDays);
 	  	return dat.toDateString();
 	}
-	getDateFormat(d){
-		var f=d;
-		return d;
+	getDateFormat(loanDate){
+		var dat = new Date(loanDate.valueOf());
+	  	return dat.toDateString();
+	}
+	constructor(props){
+		super(props);
+		var _this=this;
+		this.state = {
+			'MyBooksData':_this.props.data
+		}
+	}
+	componentWillMount(){
+		var _this=this;
+		this.setState({
+			'MyBooksData':_this.props.data
+		});
+	}
+	componentWillReceiveProps(nextProps) {
+  		this.setState({ MyBooksData: nextProps.data });
 	}
 	render() {
-		var books=<div></div>;
-		var data = [];
-	    for(var book in this.props.data) {
-	      data.push(
-	      <tr> 
-	      	<td>{this.props.data[book].name}</td> 
-	      	<td>{this.props.data[book].ownerName}</td> 
-	      	<td>{this.props.data[book].email}</td> 
-	      	<td>{this.props.data[book].phone}</td> 
-	      	<td>{this.getDateFormat(this.props.data[book].loan_date)}</td> 
-	      	<td>{this.getDateToReturn(this.props.data[book].loan_date,this.props.data[book].for_how_long)}</td> 
-		  </tr>);
-	    }
-		if(data)
-			if(data.length!=0)
-				books=<div className="books-grid" >
-					<table >
-					  	<tbody>
-							  <tr>
-							    <th>Book Name</th>
-							    <th>Owner Name</th>
-							    <th>Email</th>
-							    <th>Phone</th>
-							    <th>Loan Date</th>
-							    <th>Date To Return</th>
-							  </tr>
-							  {data}
-					  	</tbody>
-					</table>
-				</div>;
-		console.log(books)
-		return (
-			books
+		var exampleMetadata = [
+		{
+		"columnName": "for_how_long",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "ימי השאלה",
+	    "sortable": false
+	  	},
+	  	{"columnName": "loan_date",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "תאריך",
+	    "sortable": false
+	  	},
+	  	{"columnName": "phone",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "טלפון",
+	    "sortable": false
+	  	},
+	  	{"columnName": "email",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "דואל",
+	    "sortable": false
+	  	},
+	  	{"columnName": "ownerName",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "בעלים",
+	    "sortable": false
+	  	},
+		{
+	    "columnName": "name",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "שם ספר",
+	    "sortable": false
+	  	}]
+		if (this.props.data) {
+			return (
+				<div>
+					<Griddle results={this.state.MyBooksData} tableClassName="table" showFilter={true}
+		 			showSettings={true} columnMetadata={exampleMetadata} columns={["for_how_long","loan_date", "phone", "email", "ownerName","name"]}/>
+		        </div>
 		);
+		}
+		else{
+			return <div/>
+		}
+		
 	}
 }
  export default MyBorrowedBooksGrid;

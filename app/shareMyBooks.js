@@ -6,7 +6,13 @@ import FixedArea from './components/fixedArea.js';
 import AlertsArea from './components/alertsArea.js';
 import Menu from './components/menu.js';
 import BooksList from './components/booksList.js';
-import AlertWait from './components/alertWait.js'
+import AlertWait from './components/alertWait.js';
+import ChartistGraph from 'react-chartist';
+//
+import * as restService from './service/restService';
+//import Ch2 from './components/ch2.js';
+//import Chart from './components/charts.js';
+import Pie from './components/pie.js';
 // import Charts from './components/charts.js';
 // import Pie from './components/pie.js';
 import styles from './shareMyBook.css';
@@ -17,8 +23,8 @@ class ShareMyBooks extends React.Component{
 		super(props);
 		this.state = {
 			'user': { },
-			'myBooks':[ ],
-			'showLoging': true
+			'books':[ ],
+			'showLoging': true,
 		}
 	}
 	onUserChange(user){
@@ -40,6 +46,15 @@ class ShareMyBooks extends React.Component{
 		if(this.state.showLoging === true){
 			loginComponent=<div className="wrapper-login"> <Login onUserChange={this.onUserChange.bind(this) }/> <NewUserPopup /></div>;
 		}else{
+			loginComponent=<div>
+				<FixedArea getBooks={this.getBooks.bind(this)}/> 
+				<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
+				<BooksList data={this.state.Books} whichGrid={this.state.whichGrid}/>
+				<AlertsArea userId={this.state.user.id}/>
+				<div id="chart-container"></div>
+				<b>{this.state.popularCurrentTitle}</b>
+				<Pie/>
+			</div>;
 			loginComponent=<div className="wrapper">
 					<FixedArea getBooks={this.getBooks.bind(this)}/> 
 					<div className="page">
@@ -48,12 +63,14 @@ class ShareMyBooks extends React.Component{
 						<div className="alerts">
 							<AlertsArea className="alert-area" userId={this.state.user.id}/>
 							<AlertWait className="alert-wait" />
+							<Pie/>
 						</div>
 					</div>
 				</div>;
 		}
 		return(
 			loginComponent
+
 		);
 	}
 	

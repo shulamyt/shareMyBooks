@@ -24,16 +24,16 @@ class Login extends React.Component{
 	    		"password":password
 	    	};
 	    	//for Rachelli
-	    	var u= { password: '5',
-  					f_name: 'tt',
-  					l_name: 'yy',
-  					email: 'y@y.y',
-					phone: null,
-  					address: null,
-  					id: 13 }
-			thisProps.onUserChange(u);
+	  //   	var u= { password: '5',
+  	// 				f_name: 'tt',
+  	// 				l_name: 'yy',
+  	// 				email: 'y@y.y',
+			// 		phone: null,
+  	// 				address: null,
+  	// 				id: 13 }
+			// thisProps.onUserChange(u);
 			//TODO:
-			/*restService.post('/users/login',user).then(function(fetchUser){
+			restService.post('/users/login',user).then(function(fetchUser){
 				console.log("Im here");
 				//result = fetchUser;
 				console.log(fetchUser);
@@ -44,7 +44,7 @@ class Login extends React.Component{
 				}
 				console.log("firstRender");	
 				
-			});*/
+			});
 		}
 	}
 	render(){

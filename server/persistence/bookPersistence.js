@@ -18,7 +18,10 @@ var CNT6_SRCH_PUBLIC=" and user_id <> ";
 var ADD_BOOK="insert into [dbo].[Book] ([name],[author],[description],[created_at],[shelf],[clmn],[isloan],[user_id]) values ";
 var GET_DATE="GETDATE()";
 var DEL_BOOK="delete from [dbo].[Book] where id=";
-var GET_ALL_BOOKS="select id,name,author,shelf,clmn,isloan from [dbo].[Book] b where b.user_id="
+var GET_ALL_BOOKS="select id,name,author,shelf,clmn,isloan,user_id from [dbo].[Book] b where b.user_id=";
+var GET_LIKES="select top(5) l.book_name x,l.like_cnt y from [dbo].[Like] l order by l.like_cnt";
+var UPDATE_LIKES="UPDATE [dbo].[Like] set like_cnt=like_cnt+1 where book_name like '"
+var UPDTE_BOOK="UPDATE [dbo].[Book] SET "
 var dbConfig={
 	server:"localhost\\mssqlserver",
 	port:1433,
@@ -72,11 +75,9 @@ BookPersistence.prototype.getBook = function(id){
 				function(err,recordset){
 					if(err){
 						console.log(err+' error with query');
-						resolve(null);
 					}
 					else{
 						console.log(recordset);
-						resolve(recordset[0]);
 					}
 				});
 		});
@@ -174,6 +175,62 @@ BookPersistence.prototype.searchInMyLibrary=function(term,userId){
 	});
 	return promise;
 }
+
+BookPersistence.prototype.getLikes=function(){
+  var promise =  new Promise(function(resolve, reject) {
+		var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to ciyhiy7ig7i");
+			console.log("success to connect");
+			console.log(GET_LIKES);
+			req.query(GET_LIKES,
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+						resolve(null);
+					}
+					else{
+						console.log(recordset);
+						resolve(recordset);
+					}
+				});
+		});
+	});
+	return promise;
+}
+
+BookPersistence.prototype.updateLike=function(b){
+  var promise =  new Promise(function(resolve, reject) {
+		var conn = new sql.Connection(dbConfig);
+		var req = new sql.Request(conn);
+		conn.connect(function(err){
+			if(err){
+				console.log(err+' error at connecting to database');
+				return null;
+			}
+			console.log("success to connect");
+			//console.log(detailes);
+			console.log(UPDATE_LIKES +b.name);
+			req.query(/*UPDATE_LIKES +b.name +*/"'",
+				function(err,recordset){
+					if(err){
+						console.log(err+' error with query');
+						resolve(null);
+					}
+					else{
+						console.log(recordset);
+						resolve(recordset);
+					}
+				});
+		});
+	});
+	return promise;
+}
 BookPersistence.prototype.getAllBooks=function(userId){
   var promise =  new Promise(function(resolve, reject) {
 		var conn = new sql.Connection(dbConfig);
@@ -221,7 +278,46 @@ BookPersistence.prototype.deleteBook=function(id){
 				});
 		});
 	};
+BookPersistence.prototype.updateBook=function(book){
+	var conn = new sql.Connection(dbConfig);
+	var req = new sql.Request(conn);
+	conn.connect(function(err){
+		if(err){
+			console.log(err+' error at connecting to database');
+			return null;
+		}
+		console.log("success to connect");
+		console.log(book);
 
+		var q=UPDTE_BOOK+'name = '+"'"+book.name+"'"/*' ,isloan=0 */;
+		if (book.author) {
+			q=q+' ,author= '+"'"+book.author+"'";
+		}
+		if (book.shelf) {
+			q=q+' ,shelf= '+book.shelf;
+		}
+		if (book.clmn) {
+			q=q+' ,clmn= '+ book.clmn;
+		}
+		if (book.isloan==true) {
+			q=q+' ,isloan= '+1;
+		}
+		else if (book.isloan==false) {
+			q=q+' ,isloan= '+0;
+		}
+		q=q+' WHERE id = '+book.id;
+		console.log(q);
+		req.query(q,
+			function(err,recordset){
+				if(err){
+					console.log(err+' error with query');
+				}
+				else{
+					console.log(recordset);
+				}
+			});
+	});
+};
 
 var connectDB=function(){
 
