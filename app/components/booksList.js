@@ -11,15 +11,6 @@ import SearchBooksResult from './searchBooksResult';
 class BooksList extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			'showPopup': false
-		}
-	}
-	showPopupf(){
-		this.setState({
-			'showPopup':true
-		});
-
 	}
 	//for Rachelli
 	render() {
@@ -44,10 +35,6 @@ class BooksList extends React.Component {
 		var popup;
 		var grid;
 		console.log(this.props.data);
-		if (this.state.showPopup)
-			popup=<NewBookPopup />;
-		else
-			popup=<div></div>;
 		switch(this.props.whichGrid){
 			//for Rachelli:
 			case "MyBooks":grid=<MyBooks data={dd}/>;break;
@@ -58,8 +45,7 @@ class BooksList extends React.Component {
 		}
 		return (
 			<div className="books-list" >
-				<button name="addBook" onClick={()=>this.showPopupf()}>add book</button>
-				{popup}
+				<NewBookPopup />
 				{grid}
 			</div>
 		);

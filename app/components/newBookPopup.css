@@ -50,3 +50,8 @@
 	color: red;
 	font-size: 3rem;
 }
+.char{
+	display: flex;
+    align-self: stretch;
+    margin-left: 9rem;
+}

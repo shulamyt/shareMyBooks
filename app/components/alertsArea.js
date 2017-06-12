@@ -28,6 +28,7 @@ class AlertsArea extends React.Component {
 	render() {
 		return (
 			<div className="alerts-area" >
+			<img className='img-warning' src="./WArnings.png" />
 				<LateBooks WaitingBooksData={this.state.LateBooksData}/>
 				<WaitingForApproval WaitingBooksData={this.state.WaitingBooksData} />
 			</div>

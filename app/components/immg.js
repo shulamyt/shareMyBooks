@@ -1,10 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//const image = require('./../static/Facebook_like_thumb.png')
-const image = require('./../static/Like2.jpg')
-var modalButton = {
-    	backgroundImage:image
-}
 
 class Immg extends React.Component {
 	handleClick(e){
@@ -12,7 +7,7 @@ class Immg extends React.Component {
 		 this.props.rowData.id
 	}
 	render(){
-		return <button style={modalButton} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  /> 
+		return <img src="./Like2.jpg" className="like-img" onClick={()=>this.handleClick()} mode='fit'  /> 
 	}
 }	
 export default Immg;

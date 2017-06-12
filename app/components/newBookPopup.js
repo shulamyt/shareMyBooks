@@ -2,7 +2,8 @@ import React from 'react';
 import SkyLight from 'react-skylight';
 var $ = require("jquery");
 import * as restService from './../service/restService';
-
+import styles from './NewBookPopup.css';
+import CssModules from 'react-css-modules';
 
 class NewBookPopup extends React.Component {
   constructor(props){
@@ -34,18 +35,20 @@ class NewBookPopup extends React.Component {
     return (
       <div>
         <section>
-          <button onClick={() => this.refs.simpleDialog.show()}>add book</button>
+          <button className='button' title="add book" onClick={() => this.refs.simpleDialog.show()}>+</button>
         </section>
-        <SkyLight hideOnOverlayClicked ref="simpleDialog" title="Add a New Book">
-          <h4>please enter details:</h4>
-          *name: <input type="text" id="name"/><br/><br/>
-          auther: <input type="text" id="auther"/><br/><br/>
-          description:  <input type="text" id="description"/><br/><br/>
-          created_at:      <input type="date" id="cday"/><br/><br/>
-          shelf:    <input type="text" id="shelf"/><span id="spnphn"></span><br/><br/>
-          column:    <input type="text" id="colmn"/><br/><br/>
-          isloan: <input type="checkbox" id="isloan"/><br/><br/>
-          <button onClick={()=>this.addBook()}>add</button>
+        <SkyLight hideOnOverlayClicked ref="simpleDialog">
+        <h3 className="h3">ספר חדש</h3>
+          <h4 className="h4">הכנס/י פרטים:</h4>
+          <div className="char">*</div>
+          <input className="input" placeholder="שם ספר" type="text" id="name"/>
+          <input className="input" placeholder="סופר" type="text" id="auther"/>
+          <input className="input" placeholder="תאור" type="text" id="description"/>
+          <input className="input" placeholder="תאריך יצירה" type="date" id="cday"/>
+          <input className="input" placeholder="מדף" type="text" id="shelf"/><span id="spnphn"></span>
+          <input className="input" placeholder="עמודה" type="text" id="colmn"/>
+          <div> האם מושאל? <input placeholder="האם מושאל?" type="checkbox" id="isloan"/></div>
+          <button className='button' onClick={()=>this.addBook()}>+</button>
         </SkyLight>
       </div>
     )
@@ -54,4 +57,5 @@ class NewBookPopup extends React.Component {
 
 NewBookPopup.displayName = 'NewBookPopup';
 
-export default NewBookPopup;
+export default CssModules(NewBookPopup, styles);
+

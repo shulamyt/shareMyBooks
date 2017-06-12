@@ -50,11 +50,12 @@ class Login extends React.Component{
 	render(){
 		return(
 			<div className="wrapper">
-			<div className="welcome">Welcome to SharMyBooks</div>
-			<div className="enter">enter your details to log in:</div><br/>
-			<input className="input" placeholder="Email" type="text" id="email"/><br/><br/>
-			<input className="input" placeholder="Password" type="password" id="password"/><br/><br/>
-		 	<Button bsStyle="primary" onClick={()=>this.login() } >Login</Button>
+			<img className="img-logo" src="./Logo.png" />
+			<div className="welcome">Share My Books- ברוכים הבאים ל </div>
+			<div className="enter">הכנס פרטים</div><br/>
+			<input className="input" placeholder="מייל" type="text" id="email"/><br/><br/>
+			<input className="input" placeholder="סיסמה" type="password" id="password"/><br/><br/>
+		 	<Button bsStyle="primary" onClick={()=>this.login() } >כניסה</Button>
 		 	<span id="spnErr"></span><br/><br/>
 		 	<span id="noUser"></span><br/><br/>
 

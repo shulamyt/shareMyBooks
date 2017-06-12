@@ -19,11 +19,11 @@ class BooksGrid extends React.Component {
 	    headerHeight={50}>
 	    <Column
 	      header={<Cell>לחץ כדי לאשר</Cell>}
-	      cell={<Cell><button>אני משאיל</button></Cell>}
+	      cell={<Cell><button className="confirn-btn">משאיל</button></Cell>}
 	      width={100}/>
 	      <Column
 	      header={<Cell>לחץ כדי לאשר</Cell>}
-	      cell={<Cell><button>אני לא משאיל</button></Cell>}
+	      cell={<Cell><button className="confirn-btn">לא משאיל</button></Cell>}
 	      width={100}/>
 	    <Column
 	      header={<Cell>שם ספר</Cell>}

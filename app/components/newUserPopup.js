@@ -65,19 +65,19 @@ class NewUserPopup extends React.Component {
     return (
       <div>
         <section>
-          <button className='button-n-u' onClick={() => this.refs.simpleDialog.show()}>new user</button>
+          <button className='button-n-u' onClick={() => this.refs.simpleDialog.show()}>משתמש חדש</button>
         </section>
         <SkyLight hideOnOverlayClicked ref="simpleDialog" title="">
-          <h3 className='h3'>Hello, thank you for joining us!</h3>
-          <h4 className='h4'>please enter your details:</h4>
-          <div className='require'><input placeholder="Password" className='input' type="text" id="pswrd"/>*</div>
-          <div className='require'><input placeholder="Firdt name" className='input' type="text" id="f_n"/>*</div>
-          <div className='require'><input placeholder="Last name" className='input' type="text" id="l_n" />*</div>
-          <div className='require'><input placeholder="Email" className='input' type="text" id="eml"/>*</div>
+          <h3 className='h3'>! שלום ותודה על הצטרפותכם</h3>
+          <h4 className='h4'>אנא מלאו פרטים:</h4>
+          <div className='require'><input placeholder="סיסמה" className='input' type="text" id="pswrd"/>*</div>
+          <div className='require'><input placeholder="שם פרטי" className='input' type="text" id="f_n"/>*</div>
+          <div className='require'><input placeholder="שם משפחה" className='input' type="text" id="l_n" />*</div>
+          <div className='require'><input placeholder="מייל" className='input' type="text" id="eml"/>*</div>
           <span id="spneml"></span>
-          <div className='require'><input placeholder="Phone" className='input' type="text" id="phn"/>*</div>
+          <div className='require'><input placeholder="טלפון" className='input' type="text" id="phn"/>*</div>
           <span id="spnphn"></span>
-          <div className='require'><input placeholder="Address" className='input' type="text" id="add"/>*</div>
+          <div className='require'><input placeholder="כתובת" className='input' type="text" id="add"/>*</div>
           <span id="spnError"></span>
           <button className="button" onClick={()=>this.adduser()} >+</button>
         </SkyLight>
