@@ -1,6 +1,13 @@
 /*.fixed-area{
 	position:fixed;
 }*/
+#main{
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: relative;
+}
+
 .expandSubGrid{
 	display: block;
 }

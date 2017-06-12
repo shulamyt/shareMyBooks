@@ -9,12 +9,12 @@ class Login extends React.Component{
 		var err=false; 
 		var email=$("#email").val();
 		var password=$("#password").val();
-		if(password.trim()=="" || email.trim()==""){
-	        $("#spnErr").text("You must fill in required fields!!! :(");
-	        err=true;
-	    }else{
-	    	 $("#spnErr").text("");
-	    }
+		//if(password.trim()=="" || email.trim()==""){
+	      //  $("#spnErr").text("You must fill in required fields!!! :(");
+	       // err=true;
+	    //}else{
+	    //	 $("#spnErr").text("");
+	    //}
 	    if(!err){
 	    	var user={
 	    		"email":email,

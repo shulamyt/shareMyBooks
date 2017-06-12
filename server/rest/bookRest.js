@@ -71,4 +71,17 @@ module.exports = function (server) {
     server.delete('/books',function(req,res){
         bookService.deleteBook(req.body.id);
     });
+
+    //update book
+    server.post('/books/update', function (req, res) {
+        bookService.updateBook(req.body.user).then(function(ok){
+            console.log(book);
+            res.status(201).json(book);
+        
+        });
+        console.log("ubook "+req.body.book);
+        console.log("ubook "+req.body);
+        console.log("ubook "+req.body.user);
+        bookService.updateBook(req.body.user);
+    });
 };

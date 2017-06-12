@@ -10,13 +10,20 @@ var modalButton = {
 class Immg extends React.Component {
 	handleClick(e){
 		//e.preventDefault();
-		alert("id book"+this.props.rowData.name);
-		alert("id book"+this.props.rowData.id);
-		var book=this.props.rowData;
-		restService.post('/books/Like',book);
+		//alert("id book"+this.props.rowData.name);
+		console.log(book);
+		var book={
+			"name":this.props.rowData.name
+		};
+		var bookd={
+			"name":this.props.rowData.name
+		};
+		restService.post('/books/Like',book,bookd);
 	}
 	render(){
-		return <button style={modalButton} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  />
+		return <div><button style={{backgroundImage: 'url(' + image + ')'}} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  />
+		<img src={image}/>
+		</div>
 	}
 }
 export default Immg;

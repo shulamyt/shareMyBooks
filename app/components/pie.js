@@ -79,10 +79,8 @@ class Pie extends React.Component {
 	}
 	getLikes(){
 		var _this=this;
-		debugger;
 		console.log("hwohf");
 		restService.get('/books/Likes').then(function(fetchLikes){
-			debugger;
 			if(fetchLikes){
 				_this.setState({
 					'likes':fetchLikes
@@ -93,8 +91,9 @@ class Pie extends React.Component {
 	render(){
 		return(
 			<div>
-			<PieChart labels padding={50} data={this.state.popularCurrentData}/>
-			<BarChart colorBars axes data={this.state.likes}/>
+				<b>{this.state.popularCurrentTitle}</b>
+				<PieChart labels padding={50} data={this.state.popularCurrentData}/>
+				<BarChart colorBars axes data={this.state.likes}/>
 			</div>
 		);
 	}

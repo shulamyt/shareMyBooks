@@ -13,14 +13,17 @@ import * as restService from './service/restService';
 //import Ch2 from './components/ch2.js';
 //import Chart from './components/charts.js';
 import Pie from './components/pie.js';
+// import Charts from './components/charts.js';
+// import Pie from './components/pie.js';
+import styles from './shareMyBook.css';
+import CssModules from 'react-css-modules';
 
 class ShareMyBooks extends React.Component{
-
 	constructor(props){
 		super(props);
 		this.state = {
 			'user': { },
-			'myBooks':[ ],
+			'books':[ ],
 			'showLoging': true,
 		}
 	}
@@ -52,6 +55,18 @@ class ShareMyBooks extends React.Component{
 				<b>{this.state.popularCurrentTitle}</b>
 				<Pie/>
 			</div>;
+			loginComponent=<div className="wrapper">
+					<FixedArea getBooks={this.getBooks.bind(this)}/> 
+					<div className="page">
+						<Menu className="menu" userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
+						<BooksList className="booklist" data={this.state.Books} whichGrid={this.state.whichGrid}/>
+						<div className="alerts">
+							<AlertsArea className="alert-area" userId={this.state.user.id}/>
+							<AlertWait className="alert-wait" />
+							<Pie/>
+						</div>
+					</div>
+				</div>;
 		}
 		return(
 			loginComponent
@@ -60,4 +75,4 @@ class ShareMyBooks extends React.Component{
 	}
 	
 }
-export default ShareMyBooks;
+export default CssModules(ShareMyBooks, styles);

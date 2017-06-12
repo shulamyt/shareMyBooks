@@ -69,6 +69,15 @@ BookService.prototype.searchInMyLibrary=function(term,userId){
 		});
 	return promise;
 };
+BookService.prototype.updateBook=function(book){
+	var promise =  new Promise(function(resolve, reject) {
+			bookPersistence.updateBook(book).then(function(){
+				resolve("ok");
+			});
+		});
+	return promise;
+	;
+};
 
 var bookService = new BookService();
 module.exports = bookService;
