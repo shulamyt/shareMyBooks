@@ -70,10 +70,11 @@ class Search extends React.Component {
 				<input className="input-search" placeholder="שם סופר" id="searchAutherName" type="text" onChange={this.updateInputAuthorValue.bind(this)}/>
 				<input className="input-search" placeholder="בעלים" id="searchOwnerName" type="text" onChange={this.updateInputOwnerValue.bind(this)}/>
 				<input className="input-search" placeholder="שם הוצאה" id="searchPublishValue" type="text" onChange={this.updateInputPublishValue.bind(this)}/>
-				<input className="input-search" placeholder="שנת הוצאה" id="searchPublishYear" type="number" min="1800" max="2017" onChange={this.updateInputPublishYearValue.bind(this)}/></div>
+				<input className="input-search" placeholder="שנת הוצאה" id="searchPublishYear" type="number" min="1800" max="2017" onChange={this.updateInputPublishYearValue.bind(this)}/>
+				<img className="img-search" src="./BlueOrbSearch.png" onClick={()=>this.getSearchedBooksResult()}/></div>
 				<div className='checkbox1'><input className="input-search" ref="my" type="checkbox" name="search-filter" value="my"/> My library<br/>
   				<input className="input-search" ref="shared" type="checkbox" name="search-filter" value="shared" /> Shared library<br/></div>
-  				<button className='btn-search' onClick={()=>this.getSearchedBooksResult() }>Search</button>
+  				
 			</div>
 		);
 	}

@@ -42,6 +42,8 @@
     flex: 2;
     margin: 2rem;
     border: transparent !important;
+    border: 0.1rem red solid !important;
+    padding: 0.5rem;
 }
 .wrapper-login{
     display: flex;

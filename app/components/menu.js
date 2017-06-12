@@ -12,9 +12,9 @@ class Menu extends React.Component {
 	render() {
 		return (
 			<div className="menu" >
-				<button onClick={()=>this.getBooks('/books/getAll/'+this.props.userId,"MyBooks")}>My Books</button>
-				<button onClick={()=>this.getBooks('/loans/borrowed/'+this.props.userId,"MyBorrowedBooksGrid")}>ספרים ששאלתי</button>
-				<button onClick={()=>this.getBooks('/loans/lent/'+this.props.userId,"MyLentBooksGrid")}>ספרים שהשאלתי</button>
+				<button className="btn-menu" onClick={()=>this.getBooks('/books/getAll/'+this.props.userId,"MyBooks")}>My Books</button>
+				<button className="btn-menu" onClick={()=>this.getBooks('/loans/borrowed/'+this.props.userId,"MyBorrowedBooksGrid")}>ספרים ששאלתי</button>
+				<button className="btn-menu" onClick={()=>this.getBooks('/loans/lent/'+this.props.userId,"MyLentBooksGrid")}>ספרים שהשאלתי</button>
 			</div>
 		);
 	}

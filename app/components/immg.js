@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as restService from './../service/restService';
-//const image = require('./../static/Facebook_like_thumb.png')
-const image = require('./../static/Like2.jpg')
-var modalButton = {
-    backgroundImage:image
-}
+
 
 class Immg extends React.Component {
 	handleClick(e){
@@ -21,8 +17,7 @@ class Immg extends React.Component {
 		restService.post('/books/Like',book,bookd);
 	}
 	render(){
-		return <div><button style={{backgroundImage: './../static/Like2.jpg'}} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  />
-		</div>
+		return <img src="./Like2.jpg" className="like-img" onClick={()=>this.handleClick()} mode='fit'  /> 
 	}
 }
 export default Immg;
