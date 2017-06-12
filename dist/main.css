@@ -58,8 +58,10 @@ html,body {
 }
 
 .search {
-  flex: 0 0 400px;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .checkboxes {
@@ -144,4 +146,14 @@ html,body {
 .alerts i, .alerts li > span {
   float: right;
   vertical-align: middle;
+}
+.input-search{
+  margin: 1rem;
+}
+.checkbox1{
+  display: flex;
+  align-items: center;
+}
+.btn-search{
+  background-image: url('./BlueOrbSearch.png') !important;
 }

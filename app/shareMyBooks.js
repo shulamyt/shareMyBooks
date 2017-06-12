@@ -44,7 +44,7 @@ class ShareMyBooks extends React.Component{
 	render(){
 		let loginComponent = null;
 		if(this.state.showLoging === true){
-			loginComponent=<div> <Login onUserChange={this.onUserChange.bind(this) }/> <NewUserPopup /></div>;
+			loginComponent=<div className="wrapper-login"> <Login onUserChange={this.onUserChange.bind(this) }/> <NewUserPopup /></div>;
 		}else{
 			loginComponent=<div>
 				<FixedArea getBooks={this.getBooks.bind(this)}/> 
@@ -58,7 +58,7 @@ class ShareMyBooks extends React.Component{
 			loginComponent=<div className="wrapper">
 					<FixedArea getBooks={this.getBooks.bind(this)}/> 
 					<div className="page">
-						<Menu className="menu" userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
+						<Menu userId={this.state.user.id} getBooks={this.getBooks.bind(this)} />
 						<BooksList className="booklist" data={this.state.Books} whichGrid={this.state.whichGrid}/>
 						<div className="alerts">
 							<AlertsArea className="alert-area" userId={this.state.user.id}/>

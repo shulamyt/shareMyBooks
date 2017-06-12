@@ -1,0 +1,28 @@
+.wrapper{
+	display:flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+	width: 50% !important;
+}
+.welcome{
+	font-size: 6rem;
+    color: darkslateblue;
+    font-style: italic;
+    font-family: cursive;
+}
+.enter{
+	font-size: 3rem;
+    color: cornflowerblue;
+    font-style: italic;
+    font-family: cursive;
+}
+.input{
+	background: #8ec6ff;
+    border: 0.11rem #489ff7 solid;
+    width: 60rem;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: darkblue;
+}

@@ -38,9 +38,6 @@ class MyBooks extends React.Component {
 		var thisProps=this.props;
 		restService.post('/books/update',book).then(function(fetchBooks){
 			console.log(fetchBooks);
-			 if(fetchBooks){
-				thisProps.getBooks(f);
-			}
 		});
 		var tmp=this.state.MyBooksData;
 		for (var i = 0;i<tmp.length ; i++) {
@@ -58,17 +55,45 @@ class MyBooks extends React.Component {
 		});
 		this.refs.simpleDialog.show();
 	}
-	getBooks(){
-		restService.get('/books/getAll/'+this.state.CurMyBook.user_id).then(function(fetchBooks){
-			console.log(fetchBooks);
-			if(!fetchBooks){
-				thisProps.getBooks(fetchBooks,which);
-			}
-			console.log("firstRender");	
-		});
-	}
 	render() {
 		var exampleMetadata = [
+		{
+		"columnName": "like",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "אהבתי",
+	    "sortable": false,
+	    "customComponent": Immg
+	  	},
+	  	{"columnName": "isloan",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "האם מושאל",
+	    "sortable": false
+	  	},
+	  	{"columnName": "shelf",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "מדף",
+	    "sortable": false
+	  	},
+	  	{"columnName": "clmn",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "עמודה",
+	    "sortable": false
+	  	},
+	  	{"columnName": "author",
+	    "order":  4,
+	    "locked": false,
+	    "visible": true,
+	    "displayName": "סופר",
+	    "sortable": false
+	  	},
 		{
 	    "columnName": "name",
 	    "order":  4,
@@ -76,43 +101,12 @@ class MyBooks extends React.Component {
 	    "visible": true,
 	    "displayName": "שם ספר",
 	    "sortable": false
-	  },{"columnName": "author",
-	    "order":  4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "סופר",
-	    "sortable": false
-	  },{"columnName": "clmn",
-	    "order":  4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "עמודה",
-	    "sortable": false
-	  },{"columnName": "shelf",
-	    "order":  4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "מדף",
-	    "sortable": false
-	  },{"columnName": "isloan",
-	    "order":  4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "האם מושאל",
-	    "sortable": false
-	  },{"columnName": "like",
-	    "order":  4,
-	    "locked": false,
-	    "visible": true,
-	    "displayName": "אהבתי",
-	    "sortable": false,
-	    "customComponent": Immg
-	  }]
+	  	}]
 		if (this.props.data) {
 			return (
 				<div>
 			<Griddle results={this.state.MyBooksData} tableClassName="table" showFilter={true}
- 			showSettings={true} onRowClick={this.pop.bind(this)} columnMetadata={exampleMetadata}  columns={["name", "author", "clmn", "shelf","isloan","like"]}/>
+ 			showSettings={true} onRowClick={this.pop.bind(this)} columnMetadata={exampleMetadata}  columns={["like","isloan", "shelf", "clmn", "author","name"]}/>
  			<SkyLight hideOnOverlayClicked ref="simpleDialog" title="ערוך מאפייני ספר">
 	          <h4>please enter details:</h4>
 	          שם ספר: <input type="text" ref="Pname" defaultValue={this.state.CurMyBook.name}/><br/><br/>

@@ -21,8 +21,7 @@ class Immg extends React.Component {
 		restService.post('/books/Like',book,bookd);
 	}
 	render(){
-		return <div><button style={{backgroundImage: 'url(' + image + ')'}} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  />
-		<img src={image}/>
+		return <div><button style={{backgroundImage: './../static/Like2.jpg'}} onClick={()=>this.handleClick()}  width={100} height={100} mode='fit'  />
 		</div>
 	}
 }
